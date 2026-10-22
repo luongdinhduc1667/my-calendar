@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="12dp" android:background="#F5F2E9">
+    <TextView android:id="@+id/widget_title" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="LỊCH VIỆT" android:textSize="12sp" android:textStyle="bold" android:textColor="#BE513B" android:maxLines="1" />
+    <TextView android:id="@+id/widget_day" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textSize="40sp" android:textStyle="bold" android:includeFontPadding="false" android:textColor="#223B32" android:maxLines="1" />
+    <TextView android:id="@+id/widget_lunar" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:textSize="13sp" android:textStyle="bold" android:textColor="#223B32" android:maxLines="2" />
+    <TextView android:id="@+id/widget_detail" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" android:textSize="12sp" android:textColor="#677267" android:maxLines="10" android:ellipsize="end" />
+    <LinearLayout android:id="@+id/widget_month_grid" android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:layout_marginTop="8dp" android:visibility="gone" />
+</LinearLayout>
