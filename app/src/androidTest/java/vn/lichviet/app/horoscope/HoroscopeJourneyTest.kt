@@ -23,6 +23,7 @@ class HoroscopeJourneyTest {
         val database = AppDatabase.get(compose.activity)
         try {
             compose.onNode(hasText("Tử vi") and isSelectable()).performClick()
+            compose.onNodeWithTag("hs_section_1").performClick()
             compose.onNodeWithTag("hs_new_profile").performClick()
             compose.onNodeWithTag("hs_profile_name").performTextReplacement(name)
             compose.onNodeWithTag("hs_profile_save").performClick()

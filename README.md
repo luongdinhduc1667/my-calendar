@@ -1,22 +1,34 @@
-# Lịch Việt 1.0.1
+# Lịch Việt 1.1.0
 
 Ứng dụng Android native bằng Kotlin và Jetpack Compose: lịch âm dương Việt Nam,
 sự kiện và ngày giỗ, lời nhắc, widget và lá số Tử Vi theo một bộ quy tắc có nguồn.
 Các phép tính và dữ liệu cá nhân hoạt động trên thiết bị. Ứng dụng không cần tài
 khoản, backend hay quyền Internet.
 
-Source đặt `versionName = 1.0.1`, `versionCode = 10001`. Bản này đã qua gate
+Source đặt `versionName = 1.1.0`, `versionCode = 10100`. Bản này đã qua gate
 tích hợp trên emulator API 37; chưa phải gói Google Play đã ký bằng khóa phát hành.
 Kết quả build và kiểm thử cuối cùng được ghi tại [VALIDATION.md](VALIDATION.md).
 
-V1.0.1 thêm Ngày Văn hóa Việt Nam 24/11 từ năm 2026, số tuần ISO, tìm ngày
-bằng ô nhập, công tắc giờ hoàng đạo/hiệu ứng và cache lịch có giới hạn.
-Chưa đủ toàn bộ MASTER PROMPT; xem
-[đối chiếu yêu cầu](docs/REQUIREMENTS_AUDIT_1.0.1.md) và
-[báo cáo 1.0.1](docs/RELEASE_1.0.1.md).
+V1.1.0 thêm dashboard đủ 12 con giáp Việt, tra ngày sinh/năm tuổi/nạp âm,
+bốn chu kỳ dự báo dân gian có phép tính và nguồn, tra ngũ hành hai tuổi,
+Can Chi giờ và 24 Sơn/Bát Trạch. Lời luận là biên tập của Lịch Việt từ quy
+tắc công bố, không phải bài dự báo ngày cụ thể của tác giả nguồn.
+Xem [nguồn và phương pháp 1.1](docs/ZODIAC_FENG_SHUI_RULES_1.1.md) và
+[báo cáo 1.1.0](docs/RELEASE_1.1.0.md). Bảng đối chiếu MASTER PROMPT của
+bản trước được giữ ở [audit 1.0.1](docs/REQUIREMENTS_AUDIT_1.0.1.md).
 
 ## Tính năng
 
+- **12 con giáp:** Trâu/Mèo theo Việt Nam; năm tuổi đổi vào Tết. Mỗi tuổi
+  có đặc điểm biểu tượng, âm/dương, hành địa chi, lục hợp/tam hợp/lục xung,
+  đủ năm biến thể Can Chi/nạp âm và danh sách năm âm 1899–2100.
+- **Dự báo dân gian ngày/tuần/tháng/năm:** chọn ngày tham chiếu, phân biệt
+  tháng nhuận, xem căn cứ hợp/xung, lời luận biên tập, nguồn và bảng từng
+  ngày có thể mở lại lịch. Không sinh điểm may mắn hoặc lời tiên đoán ngẫu nhiên.
+- **Phong thủy:** tra quan hệ nạp âm hai ngày sinh, Can Chi 12 giờ có lựa
+  chọn đổi ngày lúc 00h/23h, hoàng/hắc đạo, 24 Sơn chính ngũ hành và tám
+  phương Đại Du Niên theo tọa nhà. Nhập góc mặt tiền thủ công; không xin
+  quyền vị trí/cảm biến và không tự coi hướng mặt tiền là quái tọa.
 - **Lịch âm dương offline:** lịch tháng/tuần, chọn ngày/năm, chuyển âm–dương
   hai chiều, tháng nhuận, Can Chi, tiết khí tại trưa Việt Nam, giờ hoàng đạo và
   lễ Tết. Calendar engine dùng UTC+7 cố định, hỗ trợ ngày dương 1900–2100.
@@ -134,9 +146,9 @@ Sau build, APK cài thử ở `app/build/outputs/apk/debug/app-debug.apk`; APK r
 chưa ký ở `app/build/outputs/apk/release/app-release-unsigned.apk`; AAB ở
 `app/build/outputs/bundle/release/app-release.aab`. Bản release cần keystore
 riêng để phát hành; repository không chứa khóa hoặc mật khẩu phát hành.
-Gói v1.0.1 đã lưu trong [artifacts/](artifacts/), kèm
-[SHA-256](artifacts/SHA256SUMS-1.0.1.txt). Các gói `0.1.0` và `1.0.0` là lịch sử;
-không dùng chúng để đánh giá source 1.0.1.
+Gói v1.1.0 lưu cục bộ trong [artifacts/](artifacts/), kèm
+[SHA-256](artifacts/SHA256SUMS-1.1.0.txt). APK/AAB/idsig được bỏ qua trong
+Git; clone repository cần tự build. Các gói cũ chỉ là lịch sử.
 
 `device.ps1` dành cho QA trên `emulator-5554`: cài/mở app, chụp ảnh, đọc log,
 đổi kích thước. Ví dụ `./device.ps1 Resize 1600x1000 200`; sau đó `ResetSize`
@@ -163,11 +175,9 @@ trong [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md),
 
 ## Kiểm chứng và giới hạn
 
-- Gate 1.0.1: **59 kiểm thử JVM và 41 kiểm thử Android đạt**, full suite
-  Android đạt cả ở cấu hình điện thoại và tablet ngang trên emulator API 37.
-  Lint debug **0 lỗi, 76 cảnh báo**; release APK/AAB R8 build thành công và
-  luồng nhập ICS đã chạy trên bản release ký debug để QA. Kết quả/bằng chứng
-  và giới hạn kiểm chứng ở [VALIDATION.md](VALIDATION.md).
+- Gate 1.1.0: **73 kiểm thử JVM và 45 kiểm thử Android**. Kết quả thực chạy,
+  cấu hình phone/tablet, Lint và R8 được ghi tại
+  [báo cáo phát hành](docs/RELEASE_1.1.0.md); lịch sử ở [VALIDATION.md](VALIDATION.md).
 - Lịch trước năm 1968 dùng hồi tố UTC+7 hiện đại, không tái dựng lịch sử từng
   miền. Tiết khí là giá trị tại trưa, không phải API thời điểm chuyển tiết
   chính xác. Sai số và các fixture độc lập được mô tả trong tài liệu core.

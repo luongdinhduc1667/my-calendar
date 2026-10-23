@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="4" failures="0" errors="0" skipped="0" time="0.000" timestamp="2026-10-23T07:33:15" hostname="localhost">
+  <testsuite name="vn.lichviet.app.zodiac.ZodiacJourneyTest" tests="3" failures="0" errors="0" skipped="0" time="13.604" timestamp="2026-10-23T07:33:15" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="compassRejectsInvalidInputAndDisplaysSittingBasedHouse" classname="vn.lichviet.app.zodiac.ZodiacJourneyTest" time="5.809" />
+    <testcase name="solarBirthLookupResolvesTheDayBeforeTet" classname="vn.lichviet.app.zodiac.ZodiacJourneyTest" time="2.819" />
+    <testcase name="twelveAnimalsAllPeriodsSourcesAndRecreationAreUsable" classname="vn.lichviet.app.zodiac.ZodiacJourneyTest" time="4.976" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.zodiac.ZodiacLocalizationTest" tests="1" failures="0" errors="0" skipped="0" time="1.754" timestamp="2026-10-23T07:33:15" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="englishUsesVietnameseCatAndBuffaloAndLocalisedPeriodLabels" classname="vn.lichviet.app.zodiac.ZodiacLocalizationTest" time="1.754" />
+  </testsuite>
+</testsuites>

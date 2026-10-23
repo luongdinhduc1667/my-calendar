@@ -1,0 +1,49 @@
+{
+  "versionName": "1.1.0",
+  "versionCode": 10100,
+  "roomSchema": 4,
+  "backupVersion": 5,
+  "ruleSet": "lichviet-cultural-1.1-v1",
+  "editorialVersion": "branch-reflection-v1",
+  "sourcesReviewedOn": "2026-10-23",
+  "jvmUniqueTests": 73,
+  "jvmFailures": 0,
+  "androidPhoneFullTests": 45,
+  "androidPhoneFullFailures": 0,
+  "androidFinalZodiacPhoneTests": 3,
+  "androidZodiacTabletTests": 4,
+  "androidZodiacFailures": 0,
+  "lintErrors": 0,
+  "lintWarnings": 76,
+  "resourceKeysPerLocale": 626,
+  "locales": [
+    "default",
+    "vi",
+    "en"
+  ],
+  "releaseR8Build": true,
+  "releaseBundleBuild": true,
+  "productionSigned": false,
+  "qaReleaseSignedWith": "Android debug key",
+  "qaReleaseColdLaunch": true,
+  "qaReleaseZodiacDashboard": true,
+  "qaReleaseBearingEntry": true,
+  "visualPhoneFont200": true,
+  "visualTabletFont200": true,
+  "phone": "1080x2400, density 420, API 37",
+  "tablet": "1600x1000, density 200, API 37",
+  "unverified": [
+    "physical devices and OEMs",
+    "API 26-32 runtime",
+    "TalkBack and all multi-window modes",
+    "battery and frame-rate benchmarks"
+  ],
+  "unsupported": [
+    "28-mansion daily assignment",
+    "Xuan Kong flying stars",
+    "Qi Men Dun Jia",
+    "occupant birth gua",
+    "deep natal-chart predictive readings"
+  ],
+  "forecasts": "Offline deterministic branch-cycle reflections written by Lich Viet; source rules and editorial interpretations are distinguished"
+}

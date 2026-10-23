@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="vn.lichviet.core.CalendarRelease101Test" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-23T06:43:28.450Z" hostname="DESKTOP-PICKT4L" time="0.01">
+  <properties/>
+  <testcase name="isoWeekUsesTheWeekBasedYearAcrossBothYearBoundaries" classname="vn.lichviet.core.CalendarRelease101Test" time="0.001"/>
+  <testcase name="cachedDayDataRemainsCorrectAcrossEvictionAndConcurrentCallers" classname="vn.lichviet.core.CalendarRelease101Test" time="0.008"/>
+  <testcase name="cultureDayStartsIn2026AndUsesSolarNovember24" classname="vn.lichviet.core.CalendarRelease101Test" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

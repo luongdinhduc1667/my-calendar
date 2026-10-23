@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="vn.lichviet.core.zodiac.ZodiacEngineTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-10-23T07:24:40.455Z" hostname="DESKTOP-PICKT4L" time="0.041">
+  <properties/>
+  <testcase name="trinesReturnTwoCompanionsWithoutCallingAPairACompleteTransformation" classname="vn.lichviet.core.zodiac.ZodiacEngineTest" time="0.001"/>
+  <testcase name="sixHarmoniesAndSixOppositionsMatchTheSourcePairs" classname="vn.lichviet.core.zodiac.ZodiacEngineTest" time="0.001"/>
+  <testcase name="forecastYearUsesTetAndTheWeekUsesActualMondayThroughSunday" classname="vn.lichviet.core.zodiac.ZodiacEngineTest" time="0.006"/>
+  <testcase name="eachAnimalHasFiveSixtyCycleVariantsAndEverySupportedLunarYearOccursOnce" classname="vn.lichviet.core.zodiac.ZodiacEngineTest" time="0.003"/>
+  <testcase name="napAmFixturesComeFromConsecutivePairsInTheClassicalSixtyCycle" classname="vn.lichviet.core.zodiac.ZodiacEngineTest" time="0.0"/>
+  <testcase name="allTwelveSignsHaveFourReproducibleSourceLinkedForecastsIncludingRangeEdges" classname="vn.lichviet.core.zodiac.ZodiacEngineTest" time="0.022"/>
+  <testcase name="vietnameseSignsChangeAtTetRatherThanJanuaryFirst" classname="vn.lichviet.core.zodiac.ZodiacEngineTest" time="0.003"/>
+  <testcase name="forecastMonthSeparatesRegularAndLeapFebruary2023" classname="vn.lichviet.core.zodiac.ZodiacEngineTest" time="0.001"/>
+  <testcase name="elementRelationshipsKeepTheirDirectionAndDoNotConflateNapAmWithStemElement" classname="vn.lichviet.core.zodiac.ZodiacEngineTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

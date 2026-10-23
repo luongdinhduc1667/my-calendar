@@ -14,3 +14,9 @@ formulas. Its attribution and full license are retained in
 AndroidX, Kotlin, Hilt, Room, DataStore, WorkManager, Coroutines, Gradle and their
 dependencies retain their upstream licenses. This project does not claim ownership
 of those libraries. Build dependency versions are listed in README.md and Gradle.
+
+Version 1.1 adds independently implemented traditional tables and short cultural
+summaries, with source titles, sections and links listed in
+`docs/ZODIAC_FENG_SHUI_RULES_1.1.md` and in the app. No museum images, long
+translations or third-party forecast feeds are bundled. Cycle reflections are
+original Lịch Việt editorial text; the references are not their authors.

@@ -1,0 +1,66 @@
+{
+  "version": "1.0.1",
+  "versionCode": 10001,
+  "verifiedAtUtc": "2026-10-23T06:55:07.8973025Z",
+  "jvm": {
+    "core": 27,
+    "errors": 0,
+    "failures": 0,
+    "app": 32
+  },
+  "android": {
+    "tablet": {
+      "tests": 41,
+      "size": "1600x1000",
+      "density": 200,
+      "skipped": 0,
+      "errors": 0,
+      "failures": 0
+    },
+    "api": 37,
+    "phone": {
+      "tests": 41,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    }
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 76
+  },
+  "roomSchema": 4,
+  "backupVersion": 5,
+  "translations": {
+    "missing": 0,
+    "vi": 524,
+    "en": 524
+  },
+  "release": {
+    "releaseSigned": false,
+    "aab": true,
+    "r8": true,
+    "qaDebugSignedSmoke": {
+      "icsPreview": true,
+      "cultureDay": true,
+      "isoWeekSetting": true
+    },
+    "apk": true
+  },
+  "visualQa": {
+    "tablet": true,
+    "fontScale200": true,
+    "phone": true
+  },
+  "requirementsComplete": false,
+  "audit": "docs/REQUIREMENTS_AUDIT_1.0.1.md",
+  "notVerified": [
+    "API 26-32 runtime",
+    "physical device",
+    "TalkBack",
+    "foldable/multi-window",
+    "long-running Doze/OEM restrictions",
+    "performance benchmarks",
+    "independent complete horoscope golden"
+  ]
+}

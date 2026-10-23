@@ -1,5 +1,11 @@
 # Đối chiếu MASTER PROMPT — Lịch Việt 1.0.1
 
+Đây là ảnh chụp trạng thái **1.0.1**. Bản 1.1.0 đã bổ sung màn 12 con giáp,
+bốn chu kỳ đọc dân gian có nguồn và ba bộ phong thủy; xem
+[báo cáo 1.1.0](RELEASE_1.1.0.md) cùng
+[nguồn/quy tắc 1.1](ZODIAC_FENG_SHUI_RULES_1.1.md). Các dòng bên dưới được
+giữ làm lịch sử, không dùng để kết luận những tính năng ấy còn thiếu ở 1.1.
+
 Ngày rà soát: 23/10/2026. Đối chiếu prompt người dùng gửi lại, mã thật trong
 repository và kết quả kiểm thử; không coi một màn giao diện là bằng chứng đã
 có thuật toán hoặc đã đủ điều kiện phát hành thương mại.

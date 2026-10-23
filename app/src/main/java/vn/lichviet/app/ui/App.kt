@@ -208,7 +208,7 @@ fun LichVietApp(model:CalendarViewModel) {
                             showWeekNumbers=preferences.showWeekNumbers,showAuspiciousHours=preferences.showAuspiciousHours)
                     }
                     composable("auspicious"){AuspiciousScreen{model.select(it);navigate("calendar")}}
-                    composable("horoscope"){HoroscopeScreen()}
+                    composable("horoscope"){HoroscopeScreen(date){model.select(it);navigate("calendar")}}
                     composable("events"){IcsWorkspace(events,incomingIcs?.let(android.net.Uri::parse),model::consumeIcsUri,add,edit)}
                     composable("settings"){SettingsScreen(preferences,
                         {scope.launch{model.setTheme(it)}},{scope.launch{model.setLunar(it)}},

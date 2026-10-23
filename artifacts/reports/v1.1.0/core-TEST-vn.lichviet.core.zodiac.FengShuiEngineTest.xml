@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="vn.lichviet.core.zodiac.FengShuiEngineTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-23T07:24:40.447Z" hostname="DESKTOP-PICKT4L" time="0.007">
+  <properties/>
+  <testcase name="hourStemsMatchAllFiveRowsOfHkoTableFive" classname="vn.lichviet.core.zodiac.FengShuiEngineTest" time="0.002"/>
+  <testcase name="ziRolloverIsExplicitAndNeverReadsBeyondTheSupportedEnd" classname="vn.lichviet.core.zodiac.FengShuiEngineTest" time="0.001"/>
+  <testcase name="standardMountainsHaveCorrectCentersAndHalfOpenBoundaries" classname="vn.lichviet.core.zodiac.FengShuiEngineTest" time="0.001"/>
+  <testcase name="civilHourSegmentsCoverAll1440MinutesOnceIncludingBothPartsOfZi" classname="vn.lichviet.core.zodiac.FengShuiEngineTest" time="0.001"/>
+  <testcase name="eightHousesMatchTheFullClassicalTableAndHouseBaseIsSittingNotFacing" classname="vn.lichviet.core.zodiac.FengShuiEngineTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

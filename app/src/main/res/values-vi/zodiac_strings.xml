@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zd_day_nap_am">Nạp âm ngày</string>
+    <string name="zd_day_opposition">Chi đối xung</string>
+    <string name="zd_tab_zodiac">12 con giáp</string>
+    <string name="zd_tab_chart">Lá số</string>
+    <string name="zd_tab_feng_shui">Phong thủy</string>
+    <string name="zd_title">Tử vi 12 con giáp</string>
+    <string name="zd_intro">Khám phá tuổi, ngũ hành và dự báo theo quy tắc dân gian. Chạm một con giáp để xem chi tiết.</string>
+    <string name="zd_all">Tất cả con giáp</string>
+    <string name="zd_birth">Tra theo ngày sinh dương lịch</string>
+    <string name="zd_clear_birth">Bỏ ngày sinh</string>
+    <string name="zd_birth_note">Tuổi đổi vào Tết âm lịch theo UTC+7. Nếu sinh trước Tết, năm tuổi có thể khác năm dương.</string>
+    <string name="zd_facts">Tuổi và bản mệnh</string>
+    <string name="zd_lunar_year">Năm âm lịch %1$d · %2$s</string>
+    <string name="zd_branch_element">Ngũ hành địa chi: %1$s · %2$s</string>
+    <string name="zd_nap_am">Nạp âm: %1$s · %2$s</string>
+    <string name="zd_traits">Biểu tượng tính cách</string>
+    <string name="zd_traits_note">Mô tả văn hóa, dùng để tự chiêm nghiệm. Sửu và Mão được bản địa hóa thành Trâu và Mèo; không dùng bảng năm hoặc ngũ hành phương Tây từ nguồn này.</string>
+    <string name="zd_relations">Hợp và xung theo địa chi</string>
+    <string name="zd_harmony">Lục hợp: %1$s</string>
+    <string name="zd_trine">Cùng nhóm tam hợp: %1$s</string>
+    <string name="zd_opposition">Lục xung: %1$s</string>
+    <string name="zd_relation_note">Hai tuổi cùng nhóm chưa tạo thành đủ bộ ba tam hợp. Hợp/xung năm sinh không quyết định quan hệ thực tế.</string>
+    <string name="zd_variants">Năm tuổi và 5 nạp âm</string>
+    <string name="zd_variant_years">Các năm âm lịch: %1$s</string>
+    <string name="zd_forecast">Dự báo dân gian</string>
+    <string name="zd_reference_date">Ngày tham chiếu</string>
+    <string name="zd_period_note">Ngày: ngày dương · Tuần: thứ Hai–Chủ Nhật · Tháng/năm: âm lịch, tách tháng nhuận.</string>
+    <string name="zd_range">Từ %1$s đến %2$s</string>
+    <string name="zd_partial">Chỉ hiển thị phần chu kỳ nằm trong phạm vi 1900–2100.</string>
+    <string name="zd_anchor">Can Chi chu kỳ: %1$s · %2$s</string>
+    <string name="zd_week_anchor">Tuần tổng hợp các ngày thực tế; không tạo Can Chi tuần.</string>
+    <string name="zd_context">Bối cảnh năm %1$s · tháng %2$s</string>
+    <string name="zd_editorial_note">Lời luận do Lịch Việt biên soạn từ bảng hợp/xung, không phải bài dự báo của tác giả nguồn. Phản ánh biểu tượng văn hóa; không dự đoán sự kiện chắc chắn.</string>
+    <string name="zd_work">Công việc và kế hoạch</string>
+    <string name="zd_relationships">Giao tiếp và quan hệ</string>
+    <string name="zd_day_breakdown">Các ngày trong chu kỳ</string>
+    <string name="zd_counts">%1$s · %2$s · %3$s</string>
+    <string name="zd_show_days">Xem bảng ngày</string>
+    <string name="zd_hide_days">Thu gọn bảng ngày</string>
+    <string name="zd_open_date">Mở lịch ngày %1$s</string>
+    <string name="zd_load_error">Không tính được dữ liệu trong phạm vi này. Hãy chọn ngày khác.</string>
+    <string name="zd_loading">Đang tính chu kỳ…</string>
+    <string name="zd_sources">Nguồn và phương pháp</string>
+    <string name="zd_source_reviewed">Đối chiếu nguồn: %1$s</string>
+    <string name="zd_rule_set">Bộ quy tắc: %1$s</string>
+    <string name="zd_open_source">Mở nguồn</string>
+    <string name="zd_source_error">Không có ứng dụng mở liên kết. Bạn có thể sao chép địa chỉ nguồn.</string>
+    <string name="zd_close">Đóng</string>
+    <string name="fs_title">Phong thủy tra cứu</string>
+    <string name="fs_intro">Ba bộ công cụ offline có nguồn: ngũ hành–nạp âm, Can Chi giờ và 24 Sơn/Bát Trạch.</string>
+    <string name="fs_elements">Ngũ hành và nạp âm</string>
+    <string name="fs_hours">Can Chi 12 giờ</string>
+    <string name="fs_compass">24 Sơn / Bát Trạch</string>
+    <string name="fs_first_birth">Ngày sinh thứ nhất</string>
+    <string name="fs_second_birth">Ngày sinh thứ hai</string>
+    <string name="fs_compare_note">So sánh ngũ hành nạp âm của hai năm âm lịch. Đây là quan hệ giữa hai hành, không phải điểm hợp hôn nhân.</string>
+    <string name="fs_select_births">Chọn hai ngày sinh để tra đúng tuổi quanh Tết.</string>
+    <string name="fs_element_same">%1$s đồng hành %2$s</string>
+    <string name="fs_element_generates">%1$s sinh %2$s</string>
+    <string name="fs_element_generated_by">%1$s được %2$s sinh</string>
+    <string name="fs_element_controls">%1$s khắc %2$s</string>
+    <string name="fs_element_controlled_by">%1$s bị %2$s khắc</string>
+    <string name="fs_element_cycles">Tương sinh: Mộc → Hỏa → Thổ → Kim → Thủy → Mộc.\nTương khắc: Mộc → Thổ → Thủy → Hỏa → Kim → Mộc.</string>
+    <string name="fs_hour_note">Giờ dân dụng UTC+7. Tý được tách 00–01 và 23–24 để thấy rõ ranh ngày; mỗi khoảng bao gồm giờ đầu, không bao gồm giờ cuối.</string>
+    <string name="fs_civil_day">Đổi ngày lúc 00:00</string>
+    <string name="fs_early_zi">Đổi ngày lúc 23:00</string>
+    <string name="fs_hour_range">%1$02d:00–%2$02d:00</string>
+    <string name="fs_effective_date">Tính theo ngày %1$s</string>
+    <string name="fs_good_hour">Hoàng đạo</string>
+    <string name="fs_other_hour">Hắc đạo</string>
+    <string name="fs_hour_last_date">Quy ước đổi ngày lúc 23:00 cần ngày tiếp theo ngoài phạm vi. Chọn 00:00 hoặc một ngày sớm hơn.</string>
+    <string name="fs_facing">Hướng mặt tiền (độ)</string>
+    <string name="fs_facing_help">0° = Bắc, 90° = Đông; tăng theo chiều kim đồng hồ. Nhập số từ 0 đến 360. Đây là góc nhập tay, không phải la bàn cảm biến.</string>
+    <string name="fs_angle_error">Nhập góc hợp lệ từ 0 đến 360.</string>
+    <string name="fs_sitting">Tọa %1$s · hướng %2$s</string>
+    <string name="fs_mountain">Sơn %1$s · chính ngũ hành %2$s</string>
+    <string name="fs_house">Trạch quái theo tọa: %1$s %2$s</string>
+    <string name="fs_house_note">Chọn phương pháp Bát Trạch theo tọa (ngược mặt tiền 180°). Đây là trạch quái của nhà, không phải cung phi năm sinh; chưa xét cửa, tầng hay bố trí thực địa.</string>
+    <string name="fs_direction_result">%1$s · %2$s · %3$s</string>
+    <string name="fs_favourable">Nhóm cát theo cổ thư</string>
+    <string name="fs_unfavourable">Nhóm hung theo cổ thư</string>
+    <string name="fs_compass_note">24 Sơn dùng chính châm, mỗi sơn 15°, lấy Tý tại 0°. Ranh dưới được tính vào sơn mới. Dùng cùng một mốc Bắc khi nhập; công cụ không tự hiệu chỉnh từ sai.</string>
+    <string name="fs_eight_houses_note">Các tên Sinh Khí, Thiên Y… là thuật ngữ của Đại Du Niên, không phải kết luận về sức khỏe, tuổi thọ hay tài sản. Bảng hiện đầy đủ tám phương và không sinh điểm số.</string>
+    <string name="fs_mountain_details">Tọa/hướng và ngũ hành</string>
+    <string name="fs_direction_table">Tám phương Đại Du Niên</string>
+    <string-array name="zd_animals">
+        <item>Chuột</item>
+        <item>Trâu</item>
+        <item>Hổ</item>
+        <item>Mèo</item>
+        <item>Rồng</item>
+        <item>Rắn</item>
+        <item>Ngựa</item>
+        <item>Dê</item>
+        <item>Khỉ</item>
+        <item>Gà</item>
+        <item>Chó</item>
+        <item>Lợn</item>
+    </string-array>
+    <string-array name="zd_traits">
+        <item>Lanh lợi · cần cù</item>
+        <item>Vững vàng · thực tế</item>
+        <item>Dũng cảm · giàu tình cảm</item>
+        <item>Tinh tế · gần gũi</item>
+        <item>Nhiệt thành · tự tin</item>
+        <item>Trầm tĩnh · suy tư</item>
+        <item>Độc lập · năng động</item>
+        <item>Ôn hòa · kiên nhẫn</item>
+        <item>Sáng tạo · nhanh trí</item>
+        <item>Chăm chỉ · thẳng thắn</item>
+        <item>Trung thành · tận tâm</item>
+        <item>Chân thành · bao dung</item>
+    </string-array>
+    <string-array name="zd_elements">
+        <item>Thủy</item>
+        <item>Mộc</item>
+        <item>Kim</item>
+        <item>Thổ</item>
+        <item>Hỏa</item>
+    </string-array>
+    <string-array name="zd_polarities">
+        <item>Dương</item>
+        <item>Âm</item>
+    </string-array>
+    <string-array name="zd_nap_am">
+        <item>Hải Trung Kim</item>
+        <item>Lư Trung Hỏa</item>
+        <item>Đại Lâm Mộc</item>
+        <item>Lộ Bàng Thổ</item>
+        <item>Kiếm Phong Kim</item>
+        <item>Sơn Đầu Hỏa</item>
+        <item>Giản Hạ Thủy</item>
+        <item>Thành Đầu Thổ</item>
+        <item>Bạch Lạp Kim</item>
+        <item>Dương Liễu Mộc</item>
+        <item>Tuyền Trung Thủy</item>
+        <item>Ốc Thượng Thổ</item>
+        <item>Tích Lịch Hỏa</item>
+        <item>Tùng Bách Mộc</item>
+        <item>Trường Lưu Thủy</item>
+        <item>Sa Trung Kim</item>
+        <item>Sơn Hạ Hỏa</item>
+        <item>Bình Địa Mộc</item>
+        <item>Bích Thượng Thổ</item>
+        <item>Kim Bạch Kim</item>
+        <item>Phú Đăng Hỏa</item>
+        <item>Thiên Hà Thủy</item>
+        <item>Đại Trạch Thổ</item>
+        <item>Thoa Xuyến Kim</item>
+        <item>Tang Đố Mộc</item>
+        <item>Đại Khê Thủy</item>
+        <item>Sa Trung Thổ</item>
+        <item>Thiên Thượng Hỏa</item>
+        <item>Thạch Lựu Mộc</item>
+        <item>Đại Hải Thủy</item>
+    </string-array>
+    <string-array name="zd_branch_relations">
+        <item>Đồng chi</item>
+        <item>Lục hợp</item>
+        <item>Cùng nhóm tam hợp</item>
+        <item>Lục xung</item>
+        <item>Không có hợp/xung trong bộ quy tắc này</item>
+    </string-array>
+    <string-array name="zd_periods">
+        <item>Ngày</item>
+        <item>Tuần</item>
+        <item>Tháng</item>
+        <item>Năm</item>
+    </string-array>
+    <string-array name="zd_tones">
+        <item>Thiên về phối hợp</item>
+        <item>Nên rà soát</item>
+        <item>Củng cố nền tảng</item>
+        <item>Giữ nhịp cân bằng</item>
+        <item>Đan xen hợp và xung</item>
+    </string-array>
+    <string-array name="zd_readings">
+        <item>Quan hệ hợp/đồng nhóm gợi chủ đề kết nối và chia sẻ. Có thể dùng chu kỳ này để suy nghĩ về cách làm việc cùng người khác.</item>
+        <item>Quan hệ xung gợi chủ đề điều chỉnh. Dành thời gian xem lại những điểm chưa thống nhất và chuẩn bị phương án thay thế.</item>
+        <item>Đồng chi nhấn mạnh sự lặp lại. Xem lại thói quen, giữ điều đang hiệu quả và chọn một việc để hoàn thiện.</item>
+        <item>Không có quan hệ hợp/xung nổi bật theo bảng đang dùng. Tiến độ thực tế và sự chuẩn bị là điểm tựa để lập kế hoạch.</item>
+        <item>Trong tuần có cả ngày hợp/đồng nhóm và ngày xung. Xem bảng ngày để chọn nhịp phối hợp, rà soát và nghỉ ngơi phù hợp.</item>
+    </string-array>
+    <string-array name="zd_work_readings">
+        <item>Chọn một việc cần trao đổi và thống nhất trách nhiệm cụ thể.</item>
+        <item>Rà lại thời hạn, yêu cầu và những giả định trước khi thay đổi kế hoạch.</item>
+        <item>Hoàn tất việc đang làm và ghi lại điều đã học được.</item>
+        <item>Sắp xếp theo mức ưu tiên và nguồn lực đang có.</item>
+        <item>Chia lịch thành thời gian trao đổi và thời gian kiểm tra lại kết quả.</item>
+    </string-array>
+    <string-array name="zd_relationship_readings">
+        <item>Chủ động lắng nghe và nói rõ mong đợi chung.</item>
+        <item>Hỏi lại để tránh hiểu nhầm; chọn lời nói bình tĩnh.</item>
+        <item>Nhận ra điều quen thuộc nhưng vẫn dành chỗ cho góc nhìn khác.</item>
+        <item>Duy trì trao đổi đều đặn và tôn trọng khác biệt.</item>
+        <item>Linh hoạt với lịch chung, xác nhận lại những việc quan trọng.</item>
+    </string-array>
+    <string-array name="fs_trigrams">
+        <item>Khảm</item>
+        <item>Cấn</item>
+        <item>Chấn</item>
+        <item>Tốn</item>
+        <item>Ly</item>
+        <item>Khôn</item>
+        <item>Đoài</item>
+        <item>Càn</item>
+    </string-array>
+    <string-array name="fs_directions">
+        <item>Bắc</item>
+        <item>Đông Bắc</item>
+        <item>Đông</item>
+        <item>Đông Nam</item>
+        <item>Nam</item>
+        <item>Tây Nam</item>
+        <item>Tây</item>
+        <item>Tây Bắc</item>
+    </string-array>
+    <string-array name="fs_mountains">
+        <item>Tý</item>
+        <item>Quý</item>
+        <item>Sửu</item>
+        <item>Cấn</item>
+        <item>Dần</item>
+        <item>Giáp</item>
+        <item>Mão</item>
+        <item>Ất</item>
+        <item>Thìn</item>
+        <item>Tốn</item>
+        <item>Tỵ</item>
+        <item>Bính</item>
+        <item>Ngọ</item>
+        <item>Đinh</item>
+        <item>Mùi</item>
+        <item>Khôn</item>
+        <item>Thân</item>
+        <item>Canh</item>
+        <item>Dậu</item>
+        <item>Tân</item>
+        <item>Tuất</item>
+        <item>Càn</item>
+        <item>Hợi</item>
+        <item>Nhâm</item>
+    </string-array>
+    <string-array name="fs_stars">
+        <item>Phục Vị</item>
+        <item>Sinh Khí</item>
+        <item>Thiên Y</item>
+        <item>Diên Niên</item>
+        <item>Họa Hại</item>
+        <item>Ngũ Quỷ</item>
+        <item>Lục Sát</item>
+        <item>Tuyệt Mệnh</item>
+    </string-array>
+    <string-array name="zd_source_scopes">
+        <item>Tóm lược ngắn đặc điểm văn hóa. Phần chuyển sang Trâu/Mèo là biên tập cho Việt Nam; không dùng bảng năm trên trang nguồn.</item>
+        <item>Đối chiếu cách gọi con giáp Việt Nam: Trâu thay Bò và Mèo thay Thỏ.</item>
+        <item>Dùng sáu cặp lục hợp, bốn nhóm tam hợp và sáu cặp đối xung. Lời luận chu kỳ do Lịch Việt viết; không phải dự báo ngày cụ thể của cổ thư.</item>
+        <item>Dùng chu kỳ 60 hoa giáp, 30 cặp nạp âm và vòng sinh/khắc. Nạp âm khác hành thiên can và hành địa chi.</item>
+        <item>Bảng 2–5 cho thứ tự Can Chi, khoảng giờ kép, can tháng và can giờ. Quy ước đổi ngày 00h/23h được chọn riêng trong ứng dụng.</item>
+        <item>Chọn chính châm và chính ngũ hành cho 24 Sơn; Đại Du Niên biến ba hào. Trạch quái lấy theo tọa, không phải cung phi năm sinh.</item>
+        <item>Sáu thần hoàng đạo là Thanh Long, Minh Đường, Kim Quỹ, Thiên Đức, Ngọc Đường, Tư Mệnh. Khởi Thanh Long theo chi ngày rồi đi thuận 12 giờ.</item>
+    </string-array>
+    <plurals name="zd_harmony_days">
+        <item quantity="other">%d ngày hợp/đồng nhóm</item>
+    </plurals>
+    <plurals name="zd_opposition_days">
+        <item quantity="other">%d ngày xung</item>
+    </plurals>
+    <plurals name="zd_total_days">
+        <item quantity="other">tổng %d ngày</item>
+    </plurals>
+</resources>

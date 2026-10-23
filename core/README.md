@@ -1,5 +1,10 @@
 # Vietnamese calendar core
 
+The `zodiac` package added in 1.1 provides Vietnamese animal signs, nạp âm,
+source-linked cycle reports, hour pillars and standard 24-Mountain / Eight-House
+calculations. Its exact conventions and editorial boundaries are documented in
+[the 1.1 rule set](../docs/ZODIAC_FENG_SHUI_RULES_1.1.md).
+
 Pure Kotlin/JVM, offline calculation. Android, widgets, recurring reminders and
 Compose all use this same module. No network permission, API key, downloaded
 calendar table or runtime astronomy dependency is required.

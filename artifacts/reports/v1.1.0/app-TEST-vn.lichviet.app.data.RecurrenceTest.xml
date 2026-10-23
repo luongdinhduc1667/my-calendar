@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="vn.lichviet.app.data.RecurrenceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-23T07:24:52.029Z" hostname="DESKTOP-PICKT4L" time="0.069">
+  <properties/>
+  <testcase name="lunarBirthdayTracksLunarNewYearAcrossSolarYears" classname="vn.lichviet.app.data.RecurrenceTest" time="0.057"/>
+  <testcase name="monthEndPolicyDoesNotDriftFollowingMonths" classname="vn.lichviet.app.data.RecurrenceTest" time="0.001"/>
+  <testcase name="explicitLunarAnchorIsHonoredAndSupportedRangeIsBounded" classname="vn.lichviet.app.data.RecurrenceTest" time="0.001"/>
+  <testcase name="leapDayBirthdayUsesExplicitMissingDayPolicy" classname="vn.lichviet.app.data.RecurrenceTest" time="0.0"/>
+  <testcase name="leapMonthPoliciesCanIncludeOrExcludeRepeatedLunarMonth" classname="vn.lichviet.app.data.RecurrenceTest" time="0.001"/>
+  <testcase name="weeklyUsesAnchorWeekdayAndIsInclusive" classname="vn.lichviet.app.data.RecurrenceTest" time="0.001"/>
+  <testcase name="lunarDayThirtyFallsBackToTwentyNineOnlyWhenRequested" classname="vn.lichviet.app.data.RecurrenceTest" time="0.002"/>
+  <testcase name="oneTimeNeverOccursBeforeAnchorOrAfterward" classname="vn.lichviet.app.data.RecurrenceTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

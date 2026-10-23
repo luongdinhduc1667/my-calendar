@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="vn.lichviet.core.AstronomicalFixturesTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-23T06:43:28.378Z" hostname="DESKTOP-PICKT4L" time="0.069">
+  <properties/>
+  <testcase name="all 730 civil dates in 2026 and 2027 match independent HKO month fixtures" classname="vn.lichviet.core.AstronomicalFixturesTest" time="0.049"/>
+  <testcase name="1985 month numbering follows Vietnamese winter solstice day rather than Chinese table" classname="vn.lichviet.core.AstronomicalFixturesTest" time="0.006"/>
+  <testcase name="all 25 new moons in 2026 and 2027 agree with NASA within one minute" classname="vn.lichviet.core.AstronomicalFixturesTest" time="0.009"/>
+  <system-out><![CDATA[RASC winter solstice 1984: low-precision solar model difference 5.994 minutes
+NASA 2026–2027: 25 new moons; maximum difference 29.081 seconds from minute-rounded fixtures
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

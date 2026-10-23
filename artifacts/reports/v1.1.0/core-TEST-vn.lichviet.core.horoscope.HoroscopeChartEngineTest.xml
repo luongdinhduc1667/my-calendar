@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="vn.lichviet.core.horoscope.HoroscopeChartEngineTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-10-23T07:24:40.429Z" hostname="DESKTOP-PICKT4L" time="0.015">
+  <properties/>
+  <testcase name="all ten four transformation rows follow the selected Ming edition" classname="vn.lichviet.core.horoscope.HoroscopeChartEngineTest" time="0.01"/>
+  <testcase name="sourced auxiliaries and Jia transformations have specific branches" classname="vn.lichviet.core.horoscope.HoroscopeChartEngineTest" time="0.001"/>
+  <testcase name="classic fire bureau first day example and twelve palace order" classname="vn.lichviet.core.horoscope.HoroscopeChartEngineTest" time="0.0"/>
+  <testcase name="unsupported zones and invalid lunar dates fail rather than silently alter charts" classname="vn.lichviet.core.horoscope.HoroscopeChartEngineTest" time="0.0"/>
+  <testcase name="source table anchors and documented two emendations" classname="vn.lichviet.core.horoscope.HoroscopeChartEngineTest" time="0.001"/>
+  <testcase name="leap lunar birth uses following month for life and body but leaves uncertain assistants absent" classname="vn.lichviet.core.horoscope.HoroscopeChartEngineTest" time="0.0"/>
+  <testcase name="major and minor cycles use source directions and counted ages" classname="vn.lichviet.core.horoscope.HoroscopeChartEngineTest" time="0.001"/>
+  <testcase name="fourteen major star positions follow the classic mnemonic and Tianfu mirror" classname="vn.lichviet.core.horoscope.HoroscopeChartEngineTest" time="0.0"/>
+  <testcase name="birth double-hour and civil day rule are explicit at the day boundary" classname="vn.lichviet.core.horoscope.HoroscopeChartEngineTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

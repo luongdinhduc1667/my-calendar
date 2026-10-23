@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="vn.lichviet.core.VietnameseCalendarTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-10-23T06:43:28.463Z" hostname="DESKTOP-PICKT4L" time="0.145">
+  <properties/>
+  <testcase name="Vietnamese new year 1968 differs from Chinese calendar" classname="vn.lichviet.core.VietnameseCalendarTest" time="0.0"/>
+  <testcase name="date search is bounded and every result exposes selection reasons" classname="vn.lichviet.core.VietnameseCalendarTest" time="0.018"/>
+  <testcase name="holidays use Vietnamese lunar date and do not repeat Tet in leap months" classname="vn.lichviet.core.VietnameseCalendarTest" time="0.001"/>
+  <testcase name="can chi known reference and twelve branch hours" classname="vn.lichviet.core.VietnameseCalendarTest" time="0.003"/>
+  <testcase name="calculation does not depend on process default time zone" classname="vn.lichviet.core.VietnameseCalendarTest" time="0.001"/>
+  <testcase name="invalid dates are rejected rather than normalized into another month" classname="vn.lichviet.core.VietnameseCalendarTest" time="0.0"/>
+  <testcase name="every supported solar date roundtrips and months have 29 or 30 days" classname="vn.lichviet.core.VietnameseCalendarTest" time="0.119"/>
+  <testcase name="term tracks the season at Vietnam noon" classname="vn.lichviet.core.VietnameseCalendarTest" time="0.001"/>
+  <testcase name="leap month is distinct from regular month and preserves year numbering" classname="vn.lichviet.core.VietnameseCalendarTest" time="0.0"/>
+  <testcase name="stable cultural IDs preserve calculations without interpreting labels" classname="vn.lichviet.core.VietnameseCalendarTest" time="0.001"/>
+  <testcase name="new moon ephemeris agrees with NASA minute precision" classname="vn.lichviet.core.VietnameseCalendarTest" time="0.0"/>
+  <testcase name="Tet agrees with independent published calendar fixtures" classname="vn.lichviet.core.VietnameseCalendarTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

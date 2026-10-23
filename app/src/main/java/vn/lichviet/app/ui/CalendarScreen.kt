@@ -1,5 +1,11 @@
 package vn.lichviet.app.ui
 
+import vn.lichviet.app.zodiac.CulturalSourceButton
+import vn.lichviet.app.zodiac.ZodiacText
+import vn.lichviet.core.zodiac.CulturalSource
+import vn.lichviet.core.zodiac.ZodiacEngine
+import vn.lichviet.core.zodiac.ZodiacSign
+
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.animateContentSize
@@ -346,6 +352,9 @@ private fun QuickActions(onConverter:()->Unit,onHolidays:()->Unit) {
 @Composable
 fun DayInformation(date:LocalDate,showHolidays:Boolean=true,showAuspiciousHours:Boolean=true) {
     val context=LocalContext.current
+    val zodiacLabels=ZodiacText(context)
+    val dayPair=remember(date){VietnameseCalendar.dayCanChiId(date)}
+    val dayNapAm=remember(dayPair){ZodiacEngine.napAm(dayPair)}
     val data=remember(date){VietnameseCalendar.dayData(date)}
     val lunar=data.lunar
     val holidays=if(showHolidays)data.holidays.map{CalendarText.holiday(context,it)} else emptyList()
@@ -364,8 +373,11 @@ fun DayInformation(date:LocalDate,showHolidays:Boolean=true,showAuspiciousHours:
             if(holidays.isNotEmpty()) Text(holidays.joinToString(" · "),color=MaterialTheme.colorScheme.primary,style=MaterialTheme.typography.bodyMedium)
             HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)
             InfoLine(stringResource(R.string.calendar_day_stems),CalendarText.dayCanChi(context,date))
+            InfoLine(stringResource(R.string.zd_day_nap_am),zodiacLabels.napAm(dayNapAm))
+            InfoLine(stringResource(R.string.zd_day_opposition),zodiacLabels.sign(ZodiacEngine.opposition(ZodiacSign.entries[dayPair.branchIndex])))
             InfoLine(stringResource(R.string.calendar_month_stems),CalendarText.monthCanChi(context,lunar))
             InfoLine(stringResource(R.string.calendar_solar_term),CalendarText.solarTerm(context,date))
+            CulturalSourceButton(CulturalSource.ELEMENTS_NAP_AM,CulturalSource.BRANCH_RELATIONS)
             if(showAuspiciousHours) {
             HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)
             Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)) {

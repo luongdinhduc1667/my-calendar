@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="41" failures="0" errors="0" skipped="0" time="0.000" timestamp="2026-10-23T06:46:14" hostname="localhost">
+  <testsuite name="vn.lichviet.app.CalendarStateTest" tests="1" failures="0" errors="0" skipped="0" time="0.016" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="restoredSelectionIsAvailableBeforeCollectionAndSurvivesRecreation" classname="vn.lichviet.app.CalendarStateTest" time="0.016" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.data.BackupCodecTest" tests="3" failures="0" errors="0" skipped="0" time="0.016" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="jsonRoundTripPreservesVietnameseTextRecurrenceAndPreferences" classname="vn.lichviet.app.data.BackupCodecTest" time="0.007" />
+    <testcase name="corruptOrFractionalInputIsRejectedBeforeRestore" classname="vn.lichviet.app.data.BackupCodecTest" time="0.005" />
+    <testcase name="previousBackupDefaultsNewSettingsAndVersionFiveRejectsWrongBooleanTypes" classname="vn.lichviet.app.data.BackupCodecTest" time="0.004" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.data.ReminderDeliveryTest" tests="1" failures="0" errors="0" skipped="0" time="0.025" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="firstDeliveryClaimsExactlyOnceAndOldAlarmCannotClaimAfterUpdate" classname="vn.lichviet.app.data.ReminderDeliveryTest" time="0.025" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.data.ReminderMigrationTest" tests="2" failures="0" errors="0" skipped="0" time="0.140" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="versionTwoOccurrenceStateAndEventsMigrateWithoutLoss" classname="vn.lichviet.app.data.ReminderMigrationTest" time="0.081" />
+    <testcase name="versionOneEventsGainStableReminderRowsWithoutLosingData" classname="vn.lichviet.app.data.ReminderMigrationTest" time="0.059" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.data.RoomPersistenceTest" tests="1" failures="0" errors="0" skipped="0" time="0.035" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="createReadUpdateDeleteSurvivesDatabaseReopen" classname="vn.lichviet.app.data.RoomPersistenceTest" time="0.035" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.horoscope.ChartExportTest" tests="1" failures="0" errors="0" skipped="0" time="0.674" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="nativePngAndPdfContainTheSelectedChartAndUseScopedProviderUris" classname="vn.lichviet.app.horoscope.ChartExportTest" time="0.674" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.horoscope.HoroscopeChartUiTest" tests="2" failures="0" errors="0" skipped="0" time="6.079" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="editorRejectsImpossibleLunarMonthThenSavesAnExplicitValidBoundaryRule" classname="vn.lichviet.app.horoscope.HoroscopeChartUiTest" time="4.283" />
+    <testcase name="traditionalGridHasTwelveTappablePalacesAndReadableSelectedDetails" classname="vn.lichviet.app.horoscope.HoroscopeChartUiTest" time="1.796" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.horoscope.HoroscopeJourneyTest" tests="1" failures="0" errors="0" skipped="0" time="5.620" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="createRecreateEditAndDeleteARealRoomProfile" classname="vn.lichviet.app.horoscope.HoroscopeJourneyTest" time="5.620" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.horoscope.HoroscopeProfilePersistenceTest" tests="3" failures="0" errors="0" skipped="0" time="0.229" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="multipleProfilesSurviveReopenEditAndDeleteIndependently" classname="vn.lichviet.app.horoscope.HoroscopeProfilePersistenceTest" time="0.097" />
+    <testcase name="backupCodecPreservesConventionsAndRejectsCoercibleWrongTypes" classname="vn.lichviet.app.horoscope.HoroscopeProfilePersistenceTest" time="0.019" />
+    <testcase name="migrationFromVersionThreeRetainsEventsAndCreatesAnEmptyProfileTable" classname="vn.lichviet.app.horoscope.HoroscopeProfilePersistenceTest" time="0.113" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.ics.IcsRuntimeTest" tests="3" failures="0" errors="0" skipped="0" time="0.136" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="safImportSupportsUidUpdateSkipAndAtomicRollback" classname="vn.lichviet.app.ics.IcsRuntimeTest" time="0.103" />
+    <testcase name="timezoneRecurrenceAndUtf8ExpandOnAndroid" classname="vn.lichviet.app.ics.IcsRuntimeTest" time="0.029" />
+    <testcase name="incompatibleEmbeddedTimezoneIsRejectedInsteadOfSilentlyUsingPlatformRules" classname="vn.lichviet.app.ics.IcsRuntimeTest" time="0.004" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.reminder.AlarmReminderIntegrationTest" tests="3" failures="0" errors="0" skipped="0" time="0.617" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="alarmCanBeUpdatedAndCanceledWithStablePendingIntentAndFallbackMode" classname="vn.lichviet.app.reminder.AlarmReminderIntegrationTest" time="0.006" />
+    <testcase name="receiverPostsOneRealNotificationAndRejectsDuplicateBroadcast" classname="vn.lichviet.app.reminder.AlarmReminderIntegrationTest" time="0.385" />
+    <testcase name="bootAndTimezoneReceiversRebuildAlarmFromPersistedEvent" classname="vn.lichviet.app.reminder.AlarmReminderIntegrationTest" time="0.226" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.ui.CalendarNavigationTest" tests="4" failures="0" errors="0" skipped="0" time="8.356" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="nextMonth_changesDisplayedMonth_andPreviousReturns" classname="vn.lichviet.app.ui.CalendarNavigationTest" time="2.063" />
+    <testcase name="converterQuickAction_opensConversion_andBackReturnsToCalendar" classname="vn.lichviet.app.ui.CalendarNavigationTest" time="1.792" />
+    <testcase name="startup_displaysCalendarAndLunarDate" classname="vn.lichviet.app.ui.CalendarNavigationTest" time="1.647" />
+    <testcase name="primaryDestinations_openTheirScreens_andReturnToCalendar" classname="vn.lichviet.app.ui.CalendarNavigationTest" time="2.854" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.ui.CalendarTextLocalizationTest" tests="3" failures="0" errors="0" skipped="0" time="0.098" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="datePatternsAndLeapSpacingBelongToTheSelectedLanguage" classname="vn.lichviet.app.ui.CalendarTextLocalizationTest" time="0.005" />
+    <testcase name="everyTypedAssessmentReasonHasBothTranslations" classname="vn.lichviet.app.ui.CalendarTextLocalizationTest" time="0.086" />
+    <testcase name="stableIdsRenderInVietnameseAndEnglishWithoutLabelMatching" classname="vn.lichviet.app.ui.CalendarTextLocalizationTest" time="0.007" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.ui.EventJourneyTest" tests="1" failures="0" errors="0" skipped="0" time="4.126" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="lunarAnniversaryCanBeSavedReopenedAndDeleted" classname="vn.lichviet.app.ui.EventJourneyTest" time="4.126" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.ui.MultipleReminderEditorTest" tests="1" failures="0" errors="0" skipped="0" time="2.920" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="multipleOffsetsSurviveEditorRecreationAndSave" classname="vn.lichviet.app.ui.MultipleReminderEditorTest" time="2.920" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.ui.OnboardingJourneyTest" tests="2" failures="0" errors="0" skipped="0" time="4.473" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="skipIsPersistedAndDoesNotReturnAfterActivityRecreation" classname="vn.lichviet.app.ui.OnboardingJourneyTest" time="1.817" />
+    <testcase name="languageChangeKeepsPersonalizationPageAndPersistsAfterRestart" classname="vn.lichviet.app.ui.OnboardingJourneyTest" time="2.656" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.ui.Release101JourneyTest" tests="1" failures="0" errors="0" skipped="0" time="3.496" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="findCultureDayAndPersistDisplaySettingsAcrossRecreation" classname="vn.lichviet.app.ui.Release101JourneyTest" time="3.496" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.ui.WidgetSelectionTest" tests="1" failures="0" errors="0" skipped="0" time="1.583" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="choosingAnotherDaySurvivesRecreationWithOriginalWidgetIntent" classname="vn.lichviet.app.ui.WidgetSelectionTest" time="1.583" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.widget.CultureDayWidgetTest" tests="1" failures="0" errors="0" skipped="0" time="0.131" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="cultureDayUsesTheAppLanguageAndReachesTheRealTodayWidget" classname="vn.lichviet.app.widget.CultureDayWidgetTest" time="0.131" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.widget.WidgetLocalizationTest" tests="2" failures="0" errors="0" skipped="0" time="0.179" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="widgetUsesAppEnglishForDatesHolidaysAndEmptyState" classname="vn.lichviet.app.widget.WidgetLocalizationTest" time="0.063" />
+    <testcase name="englishUpcomingAndMonthIncludeOngoingMultiDayAndImportedOccurrences" classname="vn.lichviet.app.widget.WidgetLocalizationTest" time="0.116" />
+  </testsuite>
+  <testsuite name="vn.lichviet.app.widget.WidgetRenderingTest" tests="4" failures="0" errors="0" skipped="0" time="0.117" timestamp="2026-10-23T06:46:14" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="lunarWidgetAppliesWithActualLunarDayAndYear" classname="vn.lichviet.app.widget.WidgetRenderingTest" time="0.017" />
+    <testcase name="todayWidgetAppliesWithCurrentSolarAndLunarDate" classname="vn.lichviet.app.widget.WidgetRenderingTest" time="0.016" />
+    <testcase name="upcomingWidgetAppliesAndShowsAnEventReadFromRoom" classname="vn.lichviet.app.widget.WidgetRenderingTest" time="0.043" />
+    <testcase name="monthWidgetAppliesAllSevenRowsWithCurrentDayLunarValue" classname="vn.lichviet.app.widget.WidgetRenderingTest" time="0.041" />
+  </testsuite>
+</testsuites>

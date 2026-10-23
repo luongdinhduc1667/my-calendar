@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="3" failures="0" errors="0" skipped="0" time="0.000" timestamp="2026-10-23T07:29:59" hostname="localhost">
+  <testsuite name="vn.lichviet.app.zodiac.ZodiacJourneyTest" tests="3" failures="0" errors="0" skipped="0" time="27.120" timestamp="2026-10-23T07:29:59" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="compassRejectsInvalidInputAndDisplaysSittingBasedHouse" classname="vn.lichviet.app.zodiac.ZodiacJourneyTest" time="9.000" />
+    <testcase name="solarBirthLookupResolvesTheDayBeforeTet" classname="vn.lichviet.app.zodiac.ZodiacJourneyTest" time="6.181" />
+    <testcase name="twelveAnimalsAllPeriodsSourcesAndRecreationAreUsable" classname="vn.lichviet.app.zodiac.ZodiacJourneyTest" time="11.939" />
+  </testsuite>
+</testsuites>

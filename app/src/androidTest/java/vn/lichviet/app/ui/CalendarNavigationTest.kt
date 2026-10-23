@@ -59,7 +59,7 @@ class CalendarNavigationTest {
     fun primaryDestinations_openTheirScreens_andReturnToCalendar() {
         listOf(
             "Ngày tốt" to "Tìm ngày phù hợp",
-            "Tử vi" to "Lá số Tử Vi",
+            "Tử vi" to "Tử vi 12 con giáp",
             "Sự kiện" to "Những ngày đáng nhớ",
             "Cài đặt" to "Theo cách của bạn",
         ).forEach { (destination, title) ->

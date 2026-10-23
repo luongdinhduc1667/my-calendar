@@ -1,7 +1,15 @@
 # Kiểm chứng Lịch Việt
 
-Bản mới nhất **1.0.1**: [kết quả build/test và gói](docs/RELEASE_1.0.1.md),
-[đối chiếu đầy đủ MASTER PROMPT](docs/REQUIREMENTS_AUDIT_1.0.1.md).
+Bản mới nhất **1.1.0**: [kết quả build/test và gói](docs/RELEASE_1.1.0.md),
+[nguồn tử vi/phong thủy](docs/ZODIAC_FENG_SHUI_RULES_1.1.md).
+
+73 bài JVM, 45 bài Android full suite trên phone API 37; nhóm tử vi mới 4 bài
+đạt trên tablet. Lint 0 lỗi/76 cảnh báo, release APK/AAB R8 build thành công.
+XML hiện tại: `artifacts/reports/v1.1.0/`. Phạm vi và cấu hình thực chạy nằm
+trong báo cáo phát hành; không suy ra đã kiểm mọi API/máy thật.
+
+Lịch sử **1.0.1**: [kết quả](docs/RELEASE_1.0.1.md),
+[đối chiếu MASTER PROMPT tại thời điểm đó](docs/REQUIREMENTS_AUDIT_1.0.1.md).
 
 59 bài JVM, 41 bài Android đạt ở cả phone/tablet emulator API 37; Lint 0 lỗi,
 76 cảnh báo; APK/AAB R8 build thành công. XML mới ở artifacts/reports/v1.0.1/.
