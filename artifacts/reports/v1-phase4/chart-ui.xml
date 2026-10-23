@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="2" failures="0" errors="0" skipped="0" time="0.000" timestamp="2026-10-23T01:06:55" hostname="localhost">
+  <testsuite name="vn.lichviet.app.horoscope.HoroscopeChartUiTest" tests="2" failures="0" errors="0" skipped="0" time="5.057" timestamp="2026-10-23T01:06:55" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="editorRejectsImpossibleLunarMonthThenSavesAnExplicitValidBoundaryRule" classname="vn.lichviet.app.horoscope.HoroscopeChartUiTest" time="3.552" />
+    <testcase name="traditionalGridHasTwelveTappablePalacesAndReadableSelectedDetails" classname="vn.lichviet.app.horoscope.HoroscopeChartUiTest" time="1.505" />
+  </testsuite>
+</testsuites>

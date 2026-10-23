@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="3" failures="0" errors="0" skipped="0" time="0.000" timestamp="2026-10-23T01:02:18" hostname="localhost">
+  <testsuite name="vn.lichviet.app.ui.CalendarTextLocalizationTest" tests="3" failures="0" errors="0" skipped="0" time="0.161" timestamp="2026-10-23T01:02:18" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="datePatternsAndLeapSpacingBelongToTheSelectedLanguage" classname="vn.lichviet.app.ui.CalendarTextLocalizationTest" time="0.002" />
+    <testcase name="everyTypedAssessmentReasonHasBothTranslations" classname="vn.lichviet.app.ui.CalendarTextLocalizationTest" time="0.148" />
+    <testcase name="stableIdsRenderInVietnameseAndEnglishWithoutLabelMatching" classname="vn.lichviet.app.ui.CalendarTextLocalizationTest" time="0.011" />
+  </testsuite>
+</testsuites>

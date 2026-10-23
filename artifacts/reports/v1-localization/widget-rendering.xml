@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="4" failures="0" errors="0" skipped="0" time="0.000" timestamp="2026-10-23T01:02:42" hostname="localhost">
+  <testsuite name="vn.lichviet.app.widget.WidgetRenderingTest" tests="4" failures="0" errors="0" skipped="0" time="0.413" timestamp="2026-10-23T01:02:42" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="lunarWidgetAppliesWithActualLunarDayAndYear" classname="vn.lichviet.app.widget.WidgetRenderingTest" time="0.204" />
+    <testcase name="todayWidgetAppliesWithCurrentSolarAndLunarDate" classname="vn.lichviet.app.widget.WidgetRenderingTest" time="0.021" />
+    <testcase name="upcomingWidgetAppliesAndShowsAnEventReadFromRoom" classname="vn.lichviet.app.widget.WidgetRenderingTest" time="0.066" />
+    <testcase name="monthWidgetAppliesAllSevenRowsWithCurrentDayLunarValue" classname="vn.lichviet.app.widget.WidgetRenderingTest" time="0.122" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="2" failures="0" errors="0" skipped="0" time="0.000" timestamp="2026-10-23T01:03:36" hostname="localhost">
+  <testsuite name="vn.lichviet.app.widget.WidgetLocalizationTest" tests="2" failures="0" errors="0" skipped="0" time="0.461" timestamp="2026-10-23T01:03:36" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="widgetUsesAppEnglishForDatesHolidaysAndEmptyState" classname="vn.lichviet.app.widget.WidgetLocalizationTest" time="0.218" />
+    <testcase name="englishUpcomingAndMonthIncludeOngoingMultiDayAndImportedOccurrences" classname="vn.lichviet.app.widget.WidgetLocalizationTest" time="0.243" />
+  </testsuite>
+</testsuites>

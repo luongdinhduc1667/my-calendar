@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="3" failures="0" errors="0" skipped="0" time="0.000" timestamp="2026-10-23T01:06:32" hostname="localhost">
+  <testsuite name="vn.lichviet.app.horoscope.HoroscopeProfilePersistenceTest" tests="3" failures="0" errors="0" skipped="0" time="0.198" timestamp="2026-10-23T01:06:32" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="multipleProfilesSurviveReopenEditAndDeleteIndependently" classname="vn.lichviet.app.horoscope.HoroscopeProfilePersistenceTest" time="0.094" />
+    <testcase name="backupCodecPreservesConventionsAndRejectsCoercibleWrongTypes" classname="vn.lichviet.app.horoscope.HoroscopeProfilePersistenceTest" time="0.012" />
+    <testcase name="migrationFromVersionThreeRetainsEventsAndCreatesAnEmptyProfileTable" classname="vn.lichviet.app.horoscope.HoroscopeProfilePersistenceTest" time="0.092" />
+  </testsuite>
+</testsuites>

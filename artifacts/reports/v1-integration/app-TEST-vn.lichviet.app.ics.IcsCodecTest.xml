@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="vn.lichviet.app.ics.IcsCodecTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-10-23T06:16:56.450Z" hostname="DESKTOP-PICKT4L" time="0.681">
+  <properties/>
+  <testcase name="externallyChangedNativeRulesStayCanonicalInsteadOfBeingFlattened" classname="vn.lichviet.app.ics.IcsCodecTest" time="0.334"/>
+  <testcase name="finiteExportHasNoOriginalOccurrenceOutsideSelectedRange" classname="vn.lichviet.app.ics.IcsCodecTest" time="0.061"/>
+  <testcase name="allDayDtendIsExclusiveAcrossSeveralDays" classname="vn.lichviet.app.ics.IcsCodecTest" time="0.007"/>
+  <testcase name="unsupportedRangeIsReportedWithoutClaimingImportSupport" classname="vn.lichviet.app.ics.IcsCodecTest" time="0.159"/>
+  <testcase name="nominalDayDurationTracksDstForEachOccurrence" classname="vn.lichviet.app.ics.IcsCodecTest" time="0.029"/>
+  <testcase name="recurringSeriesAppliesRdateExdateMovedAndCancelled" classname="vn.lichviet.app.ics.IcsCodecTest" time="0.017"/>
+  <testcase name="importedCalendarRoundTripsUnknownPropertiesAndOverrides" classname="vn.lichviet.app.ics.IcsCodecTest" time="0.023"/>
+  <testcase name="dayBasedAlarmAndInvalidRowsAreValidatedDuringPreview" classname="vn.lichviet.app.ics.IcsCodecTest" time="0.014"/>
+  <testcase name="nextHandlesTwoInstancesOnOneDayAndExhaustedCount" classname="vn.lichviet.app.ics.IcsCodecTest" time="0.007"/>
+  <testcase name="ownLunarExtensionRestoresNativeRuleAndAlarm" classname="vn.lichviet.app.ics.IcsCodecTest" time="0.026"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
+</testsuite>

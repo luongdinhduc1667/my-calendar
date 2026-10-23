@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="vn.lichviet.app.horoscope.HoroscopeProfileValidationTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-23T06:16:56.337Z" hostname="DESKTOP-PICKT4L" time="0.062">
+  <properties/>
+  <testcase name="explicitDayRulePreservesTheUsersChoiceAtTetBoundary" classname="vn.lichviet.app.horoscope.HoroscopeProfileValidationTest" time="0.031"/>
+  <testcase name="solarAndLeapLunarInputsProduceSameSupportedChart" classname="vn.lichviet.app.horoscope.HoroscopeProfileValidationTest" time="0.015"/>
+  <testcase name="blankNameAndNicknamesAreValidWithoutRealNames" classname="vn.lichviet.app.horoscope.HoroscopeProfileValidationTest" time="0.0"/>
+  <testcase name="impossibleDateZoneAndUnsupportedLeapNeverReachPersistence" classname="vn.lichviet.app.horoscope.HoroscopeProfileValidationTest" time="0.013"/>
+  <testcase name="traditionalChartRingUsesTwelveDistinctOuterCellsAndLeavesCenterFree" classname="vn.lichviet.app.horoscope.HoroscopeProfileValidationTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
