@@ -17,6 +17,10 @@ Xem [nguồn và phương pháp 1.1](docs/ZODIAC_FENG_SHUI_RULES_1.1.md) và
 [báo cáo 1.1.0](docs/RELEASE_1.1.0.md). Bảng đối chiếu MASTER PROMPT của
 bản trước được giữ ở [audit 1.0.1](docs/REQUIREMENTS_AUDIT_1.0.1.md).
 
+Báo cáo đầy đủ về công nghệ, kiến trúc, thiết kế dữ liệu, luồng xử lý,
+thư viện, kiểm thử và vận hành nằm tại
+[Báo cáo kỹ thuật dự án 1.1.0](docs/BAO_CAO_KY_THUAT_1.1.0.md).
+
 ## Tính năng
 
 - **12 con giáp:** Trâu/Mèo theo Việt Nam; năm tuổi đổi vào Tết. Mỗi tuổi
