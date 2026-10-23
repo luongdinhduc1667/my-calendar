@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onboarding_welcome_title">Lịch Việt – Mỗi ngày một ý nghĩa</string>
+    <string name="onboarding_welcome_body">Một cuốn lịch âm dương gọn gàng để lưu giữ những ngày quan trọng. Tính lịch ngay trên thiết bị, kể cả khi không có mạng.</string>
+    <string name="onboarding_lunar_title">Nhịp thời gian, nét văn hóa Việt</string>
+    <string name="onboarding_lunar_body">Xem lịch âm Việt Nam, lễ Tết, Can Chi, tiết khí và giờ hoàng đạo. Các nội dung ngày tốt là thông tin văn hóa để tham khảo.</string>
+    <string name="onboarding_events_title">Nhớ những ngày đáng nhớ</string>
+    <string name="onboarding_events_body">Lưu cuộc hẹn, sinh nhật và ngày giỗ âm lịch. Chọn cách lặp cùng các mốc nhắc phù hợp để dành thời gian cho người thân.</string>
+    <string name="onboarding_personalize_title">Chọn cách xem lịch của bạn</string>
+    <string name="onboarding_personalize_body">Bạn có thể thay đổi mọi lựa chọn này trong Cài đặt.</string>
+    <string name="onboarding_skip">Bỏ qua</string>
+    <string name="onboarding_next">Tiếp tục</string>
+    <string name="onboarding_back">Quay lại</string>
+    <string name="onboarding_start">Bắt đầu</string>
+    <string name="onboarding_page">Trang %1$d trên %2$d</string>
+    <string name="onboarding_language">Ngôn ngữ</string>
+    <string name="language_vi">Tiếng Việt</string>
+    <string name="language_en">English</string>
+    <string name="onboarding_theme">Giao diện</string>
+    <string name="theme_system">Hệ thống</string>
+    <string name="theme_light">Sáng</string>
+    <string name="theme_dark">Tối</string>
+    <string name="onboarding_week_start">Ngày đầu tuần</string>
+    <string name="week_start_monday">Thứ Hai</string>
+    <string name="week_start_sunday">Chủ Nhật</string>
+    <string name="onboarding_show_lunar">Hiển thị ngày âm trên lịch</string>
+    <string name="onboarding_setup_reminders">Thiết lập thông báo sau khi bắt đầu</string>
+    <string name="onboarding_reminder_explanation">Chỉ khi bạn chọn thiết lập hoặc bật nhắc cho sự kiện, Lịch Việt mới xin quyền thông báo. Quyền nhắc đúng giờ được giải thích riêng và luôn có lựa chọn để sau.</string>
+    <string name="onboarding_lunar_art">ÂM DƯƠNG</string>
+    <string name="onboarding_event_art">NGÀY ĐÁNG NHỚ</string>
+    <string name="onboarding_local_art">NGOẠI TUYẾN · RIÊNG TƯ</string>
+</resources>

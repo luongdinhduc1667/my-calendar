@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="calendar_holiday_culture_day">Vietnamese Culture Day</string>
+    <string name="calendar_week_column">Wk</string>
+    <string name="calendar_week_label">ISO week %1$d, week-based year %2$d</string>
+    <string name="calendar_find_date">Find a date</string>
+    <string name="settings_week_numbers">Show ISO week numbers</string>
+    <string name="settings_week_numbers_subtitle">ISO 8601 numbering; the week-based year can differ near New Year.</string>
+    <string name="settings_auspicious_hours">Show auspicious hours</string>
+    <string name="settings_auspicious_hours_subtitle">Six traditional time periods in the day details.</string>
+    <string name="settings_animations">Motion effects</string>
+    <string name="settings_animations_subtitle">Screen transitions, page changes and date selection effects.</string>
+</resources>

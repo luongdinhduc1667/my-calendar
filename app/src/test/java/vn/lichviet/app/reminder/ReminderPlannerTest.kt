@@ -42,4 +42,17 @@ class ReminderPlannerTest {
         val plan = ReminderPlanner.next(daily, ZonedDateTime.parse("2026-10-22T08:59:00+07:00"), LocalDate.parse("2026-10-22"))!!
         assertEquals(LocalDate.parse("2026-10-23"), plan.occurrenceDate)
     }
+
+    @Test fun multipleMinuteAndDayOffsetsHaveDistinctInstantInVietnam() {
+        val oneTime = EventEntity(title = "Hẹn", solarDate = "2026-10-23", hour = 9, minute = 0)
+        val now = ZonedDateTime.parse("2026-10-22T08:00:00+07:00")
+        assertEquals("2026-10-22T09:00+07:00[Asia/Ho_Chi_Minh]", ReminderPlanner.next(oneTime, 1440, now)?.trigger.toString())
+        assertEquals("2026-10-23T08:55+07:00[Asia/Ho_Chi_Minh]", ReminderPlanner.next(oneTime, 5, now)?.trigger.toString())
+    }
+
+    @Test fun allDayEventStartsAtNineInVietnamRegardlessOfStoredClockTime() {
+        val allDay = EventEntity(title = "Đi chơi", solarDate = "2026-10-23", hour = 18, minute = 30, allDay = true)
+        assertEquals("2026-10-23T08:45+07:00[Asia/Ho_Chi_Minh]",
+            ReminderPlanner.next(allDay, 15, ZonedDateTime.parse("2026-10-22T12:00:00+07:00"))?.trigger.toString())
+    }
 }

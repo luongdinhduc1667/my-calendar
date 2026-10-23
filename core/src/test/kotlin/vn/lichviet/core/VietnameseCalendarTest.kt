@@ -145,4 +145,20 @@ class VietnameseCalendarTest {
             assertFalse(VietnameseCalendar.solarToLunar(it).day in setOf(3, 5, 7, 13, 14, 18, 22, 23, 27))
         }
     }
+
+    @Test
+    fun `stable cultural IDs preserve calculations without interpreting labels`() {
+        assertEquals(CanChiId(0, 0), VietnameseCalendar.dayCanChiId(LocalDate.of(2000, 1, 7)))
+        assertEquals(CanChiId(2, 6), VietnameseCalendar.yearCanChiId(2026))
+        assertTrue(VietnameseCalendar.monthCanChiId(LunarDate(1, 2, 2023, true)).isLeapMonth)
+        assertEquals(SolarTermId.WINTER_SOLSTICE, VietnameseCalendar.solarTermId(LocalDate.of(2026, 12, 23)))
+        assertTrue(VietnameseCalendar.holidayIds(LocalDate.of(2026, 2, 17)).any { it.id == HolidayId.TET })
+        assertTrue(VietnameseCalendar.holidayIds(LocalDate.of(2023, 4, 5)).none { it.id == HolidayId.LANTERN_FESTIVAL })
+        val start = LocalDate.of(2026, 10, 1)
+        val end = LocalDate.of(2026, 10, 31)
+        assertEquals(Almanac.findDates(start, end, "Khai trương"),
+            Almanac.findDates(start, end, PurposeId.OPENING))
+        assertEquals(Almanac.assess(start, "Khai trương").isRecommended,
+            Almanac.assessId(start, PurposeId.OPENING).isRecommended)
+    }
 }

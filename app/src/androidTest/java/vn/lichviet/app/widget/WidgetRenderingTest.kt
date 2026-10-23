@@ -13,14 +13,19 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import org.junit.Rule
 import org.junit.runner.RunWith
 import vn.lichviet.app.R
+import vn.lichviet.app.AppLocaleManager
+import vn.lichviet.app.LaunchPreferencesRule
+import vn.lichviet.app.ui.CalendarText
 import vn.lichviet.app.data.AppDatabase
 import vn.lichviet.app.data.EventEntity
 import vn.lichviet.app.data.UserPreferences
 import vn.lichviet.core.VietnameseCalendar
 import java.time.DayOfWeek
 import java.time.LocalDate
+import java.time.LocalTime
 import java.time.temporal.ChronoUnit
 import java.time.temporal.TemporalAdjusters
 import java.util.UUID
@@ -29,6 +34,7 @@ import java.util.concurrent.atomic.AtomicReference
 /** Apply the production RemoteViews through Android to catch unsupported remote method calls. */
 @RunWith(AndroidJUnit4::class)
 class WidgetRenderingTest {
+    @get:Rule val launchPreferences = LaunchPreferencesRule()
     private val context = ApplicationProvider.getApplicationContext<Context>()
     private val today = LocalDate.now(VietnameseCalendar.zoneId)
 
@@ -77,7 +83,7 @@ class WidgetRenderingTest {
             withWidget(UpcomingWidgetProvider::class.java, listOf(stored)) { root ->
                 assertEquals("1 lịch hẹn", root.text(R.id.widget_day))
                 assertTrue(root.text(R.id.widget_detail).contains(stored.title))
-                assertTrue(root.text(R.id.widget_detail).contains("09:15"))
+                assertTrue(root.text(R.id.widget_detail).contains(CalendarText.time(AppLocaleManager.localizedContext(context), LocalTime.of(9, 15))))
             }
         } finally {
             database.close()
@@ -89,7 +95,8 @@ class WidgetRenderingTest {
         val result = AtomicReference<Result<Unit>>()
         InstrumentationRegistry.getInstrumentation().runOnMainSync {
             result.set(runCatching {
-                val remoteViews = CalendarWidgets.render(context, provider, 40, today, events, UserPreferences())
+                val remoteViews = CalendarWidgets.render(context, provider, 40, today, events, UserPreferences(),
+                    today.atTime(8, 0).atZone(VietnameseCalendar.zoneId).toInstant())
                 val root = remoteViews.apply(context, FrameLayout(context))
                 val width = (400 * context.resources.displayMetrics.density).toInt()
                 val height = (420 * context.resources.displayMetrics.density).toInt()

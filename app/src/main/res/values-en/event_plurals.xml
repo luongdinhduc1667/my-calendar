@@ -1,0 +1,6 @@
+<resources>
+    <plurals name="reminder_days_remaining">
+        <item quantity="one">In %d day</item>
+        <item quantity="other">In %d days</item>
+    </plurals>
+</resources>

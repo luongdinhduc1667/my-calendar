@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="calendar_short_date_pattern">MMM d, yyyy</string>
+    <string name="calendar_full_date_pattern">EEEE, MMMM d, yyyy</string>
+    <string name="calendar_month_day_pattern">MMM d</string>
+    <string name="calendar_month_year_pattern">MMMM yyyy</string>
+    <string name="calendar_month_name_pattern">MMMM</string>
+    <string name="calendar_lunar_short">%1$d/%2$d%3$s</string>
+    <string name="calendar_lunar_full">Lunar day %1$d, month %2$d%3$s, year %4$s</string>
+    <string name="calendar_leap_suffix">" (leap)"</string>
+    <string name="calendar_leap_parenthesized">" (leap month)"</string>
+    <string name="calendar_can_chi">%1$s %2$s%3$s</string>
+    <string name="calendar_auspicious_hour">%1$s (%2$02d:00–%3$02d:00)</string>
+    <string-array name="calendar_stems">
+        <item>Yang Wood</item><item>Yin Wood</item><item>Yang Fire</item><item>Yin Fire</item><item>Yang Earth</item>
+        <item>Yin Earth</item><item>Yang Metal</item><item>Yin Metal</item><item>Yang Water</item><item>Yin Water</item>
+    </string-array>
+    <string-array name="calendar_branches">
+        <item>Rat</item><item>Ox</item><item>Tiger</item><item>Cat</item><item>Dragon</item><item>Snake</item>
+        <item>Horse</item><item>Goat</item><item>Monkey</item><item>Rooster</item><item>Dog</item><item>Pig</item>
+    </string-array>
+    <string-array name="calendar_solar_terms">
+        <item>Spring Equinox</item><item>Clear and Bright</item><item>Grain Rain</item><item>Start of Summer</item>
+        <item>Grain Full</item><item>Grain in Ear</item><item>Summer Solstice</item><item>Minor Heat</item>
+        <item>Major Heat</item><item>Start of Autumn</item><item>End of Heat</item><item>White Dew</item>
+        <item>Autumn Equinox</item><item>Cold Dew</item><item>Frost Descent</item><item>Start of Winter</item>
+        <item>Minor Snow</item><item>Major Snow</item><item>Winter Solstice</item><item>Minor Cold</item>
+        <item>Major Cold</item><item>Start of Spring</item><item>Rain Water</item><item>Awakening of Insects</item>
+    </string-array>
+    <string-array name="calendar_officers">
+        <item>Establish</item><item>Remove</item><item>Full</item><item>Balance</item><item>Settle</item><item>Hold</item>
+        <item>Break</item><item>Danger</item><item>Success</item><item>Receive</item><item>Open</item><item>Close</item>
+    </string-array>
+    <string name="calendar_holiday_new_year">New Year’s Day</string>
+    <string name="calendar_holiday_valentines">Valentine’s Day</string>
+    <string name="calendar_holiday_international_womens">International Women’s Day</string>
+    <string name="calendar_holiday_reunification">Reunification Day</string>
+    <string name="calendar_holiday_labour">International Workers’ Day</string>
+    <string name="calendar_holiday_national">Vietnam National Day</string>
+    <string name="calendar_holiday_vietnamese_womens">Vietnamese Women’s Day</string>
+    <string name="calendar_holiday_teachers">Vietnamese Teachers’ Day</string>
+    <string name="calendar_holiday_christmas">Christmas Day</string>
+    <string name="calendar_holiday_tet">Tết (Lunar New Year)</string>
+    <string name="calendar_holiday_tet_second">Second day of Tết</string>
+    <string name="calendar_holiday_tet_third">Third day of Tết</string>
+    <string name="calendar_holiday_lantern">First Full Moon Festival</string>
+    <string name="calendar_holiday_cold_food">Cold Food Festival</string>
+    <string name="calendar_holiday_hung_kings">Hùng Kings Commemoration</string>
+    <string name="calendar_holiday_vesak">Vesak</string>
+    <string name="calendar_holiday_dragon_boat">Double Fifth Festival</string>
+    <string name="calendar_holiday_vu_lan">Vu Lan (Parents’ Day)</string>
+    <string name="calendar_holiday_mid_autumn">Mid-Autumn Festival</string>
+    <string name="calendar_holiday_kitchen_gods">Kitchen Gods Day</string>
+    <string name="calendar_holiday_first_lunar">First day of lunar month</string>
+    <string name="calendar_holiday_full_moon">Full moon day</string>
+    <string name="calendar_holiday_new_years_eve">Lunar New Year’s Eve</string>
+    <string name="calendar_holiday_in_leap_month">%1$s (leap month)</string>
+    <string name="calendar_purpose_opening">Opening a business</string>
+    <string name="calendar_purpose_wedding">Wedding</string>
+    <string name="calendar_purpose_moving">Moving home</string>
+    <string name="calendar_purpose_travel">Starting a journey</string>
+    <string name="calendar_assessment_candidate">Worth considering</string>
+    <string name="calendar_assessment_consider">Consider alternatives</string>
+    <string name="calendar_reason_auspicious">An auspicious day in the lunar-month cycle</string>
+    <string name="calendar_reason_ordinary">Outside the auspicious group in the lunar-month cycle</string>
+    <string name="calendar_reason_preferred_officer">%1$s officer: traditionally considered for %2$s</string>
+    <string name="calendar_reason_other_officer">%1$s officer: outside the reference group for %2$s</string>
+    <string name="calendar_reason_tam_nuong">Tam Nương day in folk tradition</string>
+    <string name="calendar_reason_nguyet_ky">Nguyệt Kỵ day in folk tradition</string>
+    <string name="calendar_reason_cultural">For cultural reference only; does not consider birth details or other date-selection systems</string>
+</resources>

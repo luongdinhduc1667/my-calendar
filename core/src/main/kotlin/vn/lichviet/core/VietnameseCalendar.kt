@@ -10,6 +10,29 @@ data class LunarDate(val day: Int, val month: Int, val year: Int, val isLeap: Bo
     val fullLabel: String get() = "Ngày $day tháng $month${if (isLeap) " nhuận" else ""}, năm ${VietnameseCalendar.yearCanChi(year)}"
 }
 
+/** Stable cultural identifiers. Presentation belongs to the Android resource layer. */
+data class CanChiId(val stemIndex: Int, val branchIndex: Int, val isLeapMonth: Boolean = false)
+data class AuspiciousHourId(val branchIndex: Int, val fromHour: Int, val toHour: Int)
+enum class SolarTermId {
+    SPRING_EQUINOX, CLEAR_AND_BRIGHT, GRAIN_RAIN, START_OF_SUMMER, GRAIN_FULL,
+    GRAIN_IN_EAR, SUMMER_SOLSTICE, MINOR_HEAT, MAJOR_HEAT, START_OF_AUTUMN,
+    END_OF_HEAT, WHITE_DEW, AUTUMN_EQUINOX, COLD_DEW, FROST_DESCENT,
+    START_OF_WINTER, MINOR_SNOW, MAJOR_SNOW, WINTER_SOLSTICE, MINOR_COLD,
+    MAJOR_COLD, START_OF_SPRING, RAIN_WATER, AWAKENING_OF_INSECTS,
+}
+enum class HolidayId {
+    NEW_YEAR, VALENTINES_DAY, INTERNATIONAL_WOMENS_DAY, REUNIFICATION_DAY,
+    LABOUR_DAY, NATIONAL_DAY, VIETNAMESE_WOMENS_DAY, TEACHERS_DAY, CHRISTMAS,
+    TET, TET_SECOND_DAY, TET_THIRD_DAY, LANTERN_FESTIVAL, COLD_FOOD_FESTIVAL,
+    HUNG_KINGS_DAY, VESAK, DRAGON_BOAT_FESTIVAL, VU_LAN, MID_AUTUMN_FESTIVAL,
+    KITCHEN_GODS_DAY, FIRST_LUNAR_DAY, FULL_MOON_DAY, NEW_YEARS_EVE,
+    VIETNAMESE_CULTURE_DAY,
+}
+data class HolidayOccurrenceId(val id: HolidayId, val isLeapMonth: Boolean = false)
+
+data class CalendarDayData(val lunar: LunarDate, val holidays: List<HolidayOccurrenceId>)
+data class IsoCalendarWeek(val number: Int, val year: Int)
+
 /**
  * Modern Vietnamese calendar, calculated offline with a fixed UTC+7 calendar meridian.
  * Supported solar dates: 1900-01-01 through 2100-12-31, inclusive. Dates preceding
@@ -19,6 +42,28 @@ object VietnameseCalendar {
     val zoneId: ZoneId = ZoneId.of("Asia/Ho_Chi_Minh")
     val minDate: LocalDate = LocalDate.of(1900, 1, 1)
     val maxDate: LocalDate = LocalDate.of(2100, 12, 31)
+    private val dayCache = object : LinkedHashMap<LocalDate, CalendarDayData>(512, .75f, true) {
+        override fun removeEldestEntry(eldest: MutableMap.MutableEntry<LocalDate, CalendarDayData>) = size > 512
+    }
+
+    /** Bounded, thread-safe cache shared by grid, detail, holiday list and widgets.
+     * Labels are deliberately excluded so changing the app language cannot stale them. */
+    fun dayData(date: LocalDate): CalendarDayData = synchronized(dayCache) {
+        dayCache.getOrPut(date) {
+            val lunar = solarToLunar(date)
+            CalendarDayData(lunar, computeHolidayIds(date, lunar))
+        }
+    }
+
+    /** Call from a background dispatcher before showing calendar calculations. */
+    fun warmUp() { solarToLunar(minDate) }
+
+    /** ISO numbering uses the Thursday inside the displayed Monday/Sunday-first row. */
+    fun isoWeekForRow(start: LocalDate): IsoCalendarWeek {
+        val thursday = start.with(java.time.temporal.TemporalAdjusters.nextOrSame(java.time.DayOfWeek.THURSDAY))
+        val fields = java.time.temporal.WeekFields.ISO
+        return IsoCalendarWeek(thursday.get(fields.weekOfWeekBasedYear()), thursday.get(fields.weekBasedYear()))
+    }
 
     internal val stems = listOf("Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ", "Canh", "Tân", "Nhâm", "Quý")
     internal val branches = listOf("Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi", "Thân", "Dậu", "Tuất", "Hợi")
@@ -96,74 +141,121 @@ object VietnameseCalendar {
         return date.takeIf { it < month.end && it in minDate..maxDate }
     }
 
-    fun dayCanChi(date: LocalDate): String {
+    fun dayCanChiId(date: LocalDate): CanChiId {
         requireSupported(date)
         val jdn = julianDayNumber(date)
-        return "${stems[Math.floorMod(jdn + 9, 10)]} ${branches[Math.floorMod(jdn + 1, 12)]}"
+        return CanChiId(Math.floorMod(jdn + 9, 10), Math.floorMod(jdn + 1, 12))
     }
 
-    fun monthCanChi(lunar: LunarDate): String {
+    fun dayCanChi(date: LocalDate): String = canChiLabel(dayCanChiId(date))
+
+    fun monthCanChiId(lunar: LunarDate): CanChiId {
         require(lunar.month in 1..12) { "Tháng âm lịch phải từ 1 đến 12" }
-        return "${stems[Math.floorMod(lunar.year * 12 + lunar.month + 3, 10)]} ${branches[(lunar.month + 1) % 12]}${if (lunar.isLeap) " (nhuận)" else ""}"
+        return CanChiId(Math.floorMod(lunar.year * 12 + lunar.month + 3, 10),
+            (lunar.month + 1) % 12, lunar.isLeap)
     }
 
-    fun yearCanChi(year: Int): String =
-        "${stems[Math.floorMod(year + 6, 10)]} ${branches[Math.floorMod(year + 8, 12)]}"
+    fun monthCanChi(lunar: LunarDate): String = canChiLabel(monthCanChiId(lunar))
+
+    fun yearCanChiId(year: Int): CanChiId = CanChiId(Math.floorMod(year + 6, 10), Math.floorMod(year + 8, 12))
+
+    fun yearCanChi(year: Int): String = canChiLabel(yearCanChiId(year))
+
+    private fun canChiLabel(id: CanChiId): String =
+        "${stems[id.stemIndex]} ${branches[id.branchIndex]}${if (id.isLeapMonth) " (nhuận)" else ""}"
 
     /** Solar term prevailing at noon in Vietnam. This is not an exact transition-time API. */
-    fun solarTerm(date: LocalDate): String {
+    fun solarTermId(date: LocalDate): SolarTermId {
         requireSupported(date)
-        return terms[floor(solarLongitudeAtNoon(date) / 15).toInt()]
+        return SolarTermId.entries[floor(solarLongitudeAtNoon(date) / 15).toInt()]
     }
 
+    fun solarTerm(date: LocalDate): String = terms[solarTermId(date).ordinal]
+
     /** Traditional six auspicious double-hours, ordered from Tý to Hợi. */
-    fun auspiciousHours(date: LocalDate): List<String> {
+    fun auspiciousHourIds(date: LocalDate): List<AuspiciousHourId> {
         requireSupported(date)
         val start = Math.floorMod(2 * (dayBranch(date) - 2), 12)
         val good = setOf(0, 1, 4, 5, 7, 10).map { (start + it) % 12 }.toSet()
         return (0..11).filter { it in good }.map {
             val from = if (it == 0) 23 else it * 2 - 1
             val to = it * 2 + 1
-            "${branches[it]} (${from.toString().padStart(2, '0')}:00–${to.toString().padStart(2, '0')}:00)"
+            AuspiciousHourId(it, from, to)
         }
     }
 
+    fun auspiciousHours(date: LocalDate): List<String> = auspiciousHourIds(date).map {
+        "${branches[it.branchIndex]} (${it.fromHour.toString().padStart(2, '0')}:00–${it.toHour.toString().padStart(2, '0')}:00)"
+    }
+
     /** Named observances; not a legal public-holiday or compensatory leave schedule. */
-    fun holidays(date: LocalDate): List<String> {
-        val lunar = solarToLunar(date)
+    fun holidayIds(date: LocalDate): List<HolidayOccurrenceId> = dayData(date).holidays
+
+    private fun computeHolidayIds(date: LocalDate, lunar: LunarDate): List<HolidayOccurrenceId> {
         return buildList {
             when (date.monthValue to date.dayOfMonth) {
-                1 to 1 -> add("Tết Dương lịch")
-                2 to 14 -> add("Lễ Tình nhân")
-                3 to 8 -> add("Ngày Quốc tế Phụ nữ")
-                4 to 30 -> add("Ngày Giải phóng miền Nam")
-                5 to 1 -> add("Ngày Quốc tế Lao động")
-                9 to 2 -> add("Quốc khánh Việt Nam")
-                10 to 20 -> add("Ngày Phụ nữ Việt Nam")
-                11 to 20 -> add("Ngày Nhà giáo Việt Nam")
-                12 to 25 -> add("Giáng sinh")
+                1 to 1 -> add(HolidayOccurrenceId(HolidayId.NEW_YEAR))
+                2 to 14 -> add(HolidayOccurrenceId(HolidayId.VALENTINES_DAY))
+                3 to 8 -> add(HolidayOccurrenceId(HolidayId.INTERNATIONAL_WOMENS_DAY))
+                4 to 30 -> add(HolidayOccurrenceId(HolidayId.REUNIFICATION_DAY))
+                5 to 1 -> add(HolidayOccurrenceId(HolidayId.LABOUR_DAY))
+                9 to 2 -> add(HolidayOccurrenceId(HolidayId.NATIONAL_DAY))
+                10 to 20 -> add(HolidayOccurrenceId(HolidayId.VIETNAMESE_WOMENS_DAY))
+                11 to 20 -> add(HolidayOccurrenceId(HolidayId.TEACHERS_DAY))
+                // Resolution 28/2026/QH16, effective 2026-07-01. No retrospective observance.
+                11 to 24 -> if (date.year >= 2026) add(HolidayOccurrenceId(HolidayId.VIETNAMESE_CULTURE_DAY))
+                12 to 25 -> add(HolidayOccurrenceId(HolidayId.CHRISTMAS))
             }
             if (!lunar.isLeap) {
                 when (lunar.month to lunar.day) {
-                    1 to 1 -> add("Tết Nguyên đán")
-                    1 to 2 -> add("Mùng 2 Tết")
-                    1 to 3 -> add("Mùng 3 Tết")
-                    1 to 15 -> add("Tết Nguyên tiêu")
-                    3 to 3 -> add("Tết Hàn thực")
-                    3 to 10 -> add("Giỗ Tổ Hùng Vương")
-                    4 to 15 -> add("Lễ Phật đản")
-                    5 to 5 -> add("Tết Đoan ngọ")
-                    7 to 15 -> add("Lễ Vu lan")
-                    8 to 15 -> add("Tết Trung thu")
-                    12 to 23 -> add("Ông Công, Ông Táo")
+                    1 to 1 -> add(HolidayOccurrenceId(HolidayId.TET))
+                    1 to 2 -> add(HolidayOccurrenceId(HolidayId.TET_SECOND_DAY))
+                    1 to 3 -> add(HolidayOccurrenceId(HolidayId.TET_THIRD_DAY))
+                    1 to 15 -> add(HolidayOccurrenceId(HolidayId.LANTERN_FESTIVAL))
+                    3 to 3 -> add(HolidayOccurrenceId(HolidayId.COLD_FOOD_FESTIVAL))
+                    3 to 10 -> add(HolidayOccurrenceId(HolidayId.HUNG_KINGS_DAY))
+                    4 to 15 -> add(HolidayOccurrenceId(HolidayId.VESAK))
+                    5 to 5 -> add(HolidayOccurrenceId(HolidayId.DRAGON_BOAT_FESTIVAL))
+                    7 to 15 -> add(HolidayOccurrenceId(HolidayId.VU_LAN))
+                    8 to 15 -> add(HolidayOccurrenceId(HolidayId.MID_AUTUMN_FESTIVAL))
+                    12 to 23 -> add(HolidayOccurrenceId(HolidayId.KITCHEN_GODS_DAY))
                 }
             }
-            if (lunar.day == 1) add("Mùng một${if (lunar.isLeap) " tháng nhuận" else ""}")
-            if (lunar.day == 15) add("Ngày rằm${if (lunar.isLeap) " tháng nhuận" else ""}")
+            if (lunar.day == 1) add(HolidayOccurrenceId(HolidayId.FIRST_LUNAR_DAY, lunar.isLeap))
+            if (lunar.day == 15) add(HolidayOccurrenceId(HolidayId.FULL_MOON_DAY, lunar.isLeap))
             if (date < maxDate) {
                 val tomorrow = solarToLunar(date.plusDays(1))
-                if (tomorrow.month == 1 && tomorrow.day == 1 && !tomorrow.isLeap) add("Giao thừa")
+                if (tomorrow.month == 1 && tomorrow.day == 1 && !tomorrow.isLeap) add(HolidayOccurrenceId(HolidayId.NEW_YEARS_EVE))
             }
+        }
+    }
+
+    fun holidays(date: LocalDate): List<String> = holidayIds(date).map { occurrence ->
+        when (occurrence.id) {
+            HolidayId.NEW_YEAR -> "Tết Dương lịch"
+            HolidayId.VALENTINES_DAY -> "Lễ Tình nhân"
+            HolidayId.INTERNATIONAL_WOMENS_DAY -> "Ngày Quốc tế Phụ nữ"
+            HolidayId.REUNIFICATION_DAY -> "Ngày Giải phóng miền Nam"
+            HolidayId.LABOUR_DAY -> "Ngày Quốc tế Lao động"
+            HolidayId.NATIONAL_DAY -> "Quốc khánh Việt Nam"
+            HolidayId.VIETNAMESE_WOMENS_DAY -> "Ngày Phụ nữ Việt Nam"
+            HolidayId.TEACHERS_DAY -> "Ngày Nhà giáo Việt Nam"
+            HolidayId.CHRISTMAS -> "Giáng sinh"
+            HolidayId.TET -> "Tết Nguyên đán"
+            HolidayId.TET_SECOND_DAY -> "Mùng 2 Tết"
+            HolidayId.TET_THIRD_DAY -> "Mùng 3 Tết"
+            HolidayId.LANTERN_FESTIVAL -> "Tết Nguyên tiêu"
+            HolidayId.COLD_FOOD_FESTIVAL -> "Tết Hàn thực"
+            HolidayId.HUNG_KINGS_DAY -> "Giỗ Tổ Hùng Vương"
+            HolidayId.VESAK -> "Lễ Phật đản"
+            HolidayId.DRAGON_BOAT_FESTIVAL -> "Tết Đoan ngọ"
+            HolidayId.VU_LAN -> "Lễ Vu lan"
+            HolidayId.MID_AUTUMN_FESTIVAL -> "Tết Trung thu"
+            HolidayId.KITCHEN_GODS_DAY -> "Ông Công, Ông Táo"
+            HolidayId.FIRST_LUNAR_DAY -> "Mùng một${if (occurrence.isLeapMonth) " tháng nhuận" else ""}"
+            HolidayId.FULL_MOON_DAY -> "Ngày rằm${if (occurrence.isLeapMonth) " tháng nhuận" else ""}"
+            HolidayId.NEW_YEARS_EVE -> "Giao thừa"
+            HolidayId.VIETNAMESE_CULTURE_DAY -> "Ngày Văn hóa Việt Nam"
         }
     }
 

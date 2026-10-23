@@ -1,0 +1,6 @@
+<resources>
+    <plurals name="reminder_days_remaining">
+        <item quantity="one">Còn %d ngày</item>
+        <item quantity="other">Còn %d ngày</item>
+    </plurals>
+</resources>

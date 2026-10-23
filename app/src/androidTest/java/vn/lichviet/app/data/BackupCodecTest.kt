@@ -12,7 +12,8 @@ class BackupCodecTest {
         val snapshot = BackupSnapshot(listOf(EventEntity(title = "Giỗ bà ngoại", note = "Hương, hoa\nTại nhà", solarDate = "2026-10-22",
             repeat = RepeatRule.LUNAR_YEARLY, type = EventType.DEATH_ANNIVERSARY, lunarDay = 30, lunarMonth = 8,
             leapMonthPolicy = LeapMonthPolicy.BOTH, missingDayPolicy = MissingDayPolicy.SKIP)),
-            UserPreferences(AppTheme.DARK, showLunar = true, showHolidays = false, mondayFirst = false))
+            UserPreferences(AppTheme.DARK, showLunar = true, showHolidays = false, mondayFirst = false,
+                showWeekNumbers=true,showAuspiciousHours=false,animationsEnabled=false))
         assertEquals(snapshot, BackupCodec.decode(BackupCodec.encode(snapshot)))
     }
 
@@ -21,5 +22,16 @@ class BackupCodecTest {
         assertThrows(IllegalArgumentException::class.java) { BackupCodec.decode("{}") }
         assertThrows(IllegalArgumentException::class.java) { BackupCodec.decode(valid.replace("\"hour\": 9", "\"hour\": 9.5")) }
         assertThrows(IllegalArgumentException::class.java) { BackupCodec.decode(valid.replace("2026-10-22", "2200-10-22")) }
+    }
+
+    @Test fun previousBackupDefaultsNewSettingsAndVersionFiveRejectsWrongBooleanTypes() {
+        val current=BackupCodec.encode(BackupSnapshot(emptyList(),UserPreferences(showWeekNumbers=true,animationsEnabled=false)))
+        val legacy=org.json.JSONObject(current).apply {
+            put("version",4)
+            getJSONObject("preferences").apply { remove("showWeekNumbers");remove("showAuspiciousHours");remove("animationsEnabled") }
+        }
+        assertEquals(UserPreferences(),BackupCodec.decode(legacy.toString()).preferences)
+        val malformed=org.json.JSONObject(current).apply {getJSONObject("preferences").put("animationsEnabled","false")}
+        assertThrows(IllegalArgumentException::class.java){BackupCodec.decode(malformed.toString())}
     }
 }

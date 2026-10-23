@@ -20,6 +20,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.lichviet.app.MainActivity
+import vn.lichviet.app.LaunchPreferencesRule
 import vn.lichviet.core.VietnameseCalendar
 import java.time.LocalDate
 import java.time.YearMonth
@@ -27,8 +28,8 @@ import java.time.YearMonth
 /** User journeys shared by the phone navigation bar and the tablet navigation rail. */
 @RunWith(AndroidJUnit4::class)
 class CalendarNavigationTest {
-    @get:Rule
-    val compose = createAndroidComposeRule<MainActivity>()
+    @get:Rule(order=0) val launchPreferences=LaunchPreferencesRule()
+    @get:Rule(order=1) val compose = createAndroidComposeRule<MainActivity>()
 
     @Test
     fun startup_displaysCalendarAndLunarDate() {
@@ -38,7 +39,7 @@ class CalendarNavigationTest {
         compose.onNodeWithTag("date_$today")
             .performScrollTo()
             .assertIsDisplayed()
-            .assert(hasContentDescription("âm lịch", substring = true))
+            .assert(hasContentDescription(CalendarText.lunarFull(compose.activity,VietnameseCalendar.solarToLunar(today)), substring = true))
     }
 
     @Test
@@ -58,12 +59,12 @@ class CalendarNavigationTest {
     fun primaryDestinations_openTheirScreens_andReturnToCalendar() {
         listOf(
             "Ngày tốt" to "Tìm ngày phù hợp",
-            "Tử vi" to "Khám phá tuổi của bạn",
+            "Tử vi" to "Lá số Tử Vi",
             "Sự kiện" to "Những ngày đáng nhớ",
             "Cài đặt" to "Theo cách của bạn",
         ).forEach { (destination, title) ->
             navigationItem(destination).performClick()
-            heading(title).performScrollTo().assertIsDisplayed()
+            heading(title).assertIsDisplayed()
         }
 
         navigationItem("Lịch").performClick()

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_app_title">VIETNAMESE CALENDAR</string>
+    <string name="widget_name_today">Lịch Việt · Today</string>
+    <string name="widget_name_lunar">Lịch Việt · Lunar date</string>
+    <string name="widget_name_month">Lịch Việt · Month</string>
+    <string name="widget_name_upcoming">Lịch Việt · Upcoming</string>
+    <string name="widget_supported_years">Lunar dates supported for 1900–2100</string>
+    <string name="widget_upcoming_title">UPCOMING EVENTS</string>
+    <string name="widget_upcoming_none">None</string>
+    <string name="widget_upcoming_count">%1$d upcoming</string>
+    <string name="widget_upcoming_tap">Tap to add an event</string>
+    <string name="widget_upcoming_categories">Birthdays · Anniversaries · Events</string>
+    <string name="widget_upcoming_line">%1$s  %2$s  %3$s</string>
+    <string name="widget_lunar_title">LUNAR · MONTH %1$d%2$s</string>
+    <string name="widget_lunar_leap">" LEAP"</string>
+    <string name="widget_lunar_year">Year %1$s</string>
+    <string name="widget_today_title">TODAY · %1$s</string>
+    <string name="widget_today_lunar">Lunar %1$s · %2$s</string>
+    <string name="widget_all_day">All day</string>
+    <string name="widget_cell_description">%1$s, lunar %2$s</string>
+    <plurals name="widget_cell_events_description"><item quantity="one">%1$s, %2$d event</item><item quantity="other">%1$s, %2$d events</item></plurals>
+    <string name="widget_date_range">%1$s–%2$s</string>
+    <string-array name="widget_weekdays_monday"><item>Mon</item><item>Tue</item><item>Wed</item><item>Thu</item><item>Fri</item><item>Sat</item><item>Sun</item></string-array>
+    <string-array name="widget_weekdays_sunday"><item>Sun</item><item>Mon</item><item>Tue</item><item>Wed</item><item>Thu</item><item>Fri</item><item>Sat</item></string-array>
+</resources>

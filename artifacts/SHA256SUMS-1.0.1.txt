@@ -1,0 +1,3 @@
+bd416c279dc203daa238fec9e6cc930afaff855ae1ba23a9941fa8b8685e1ea5  LichViet-1.0.1-debug.apk
+d378290e2472739aa76955f96101917553d3efbf53d4be7d044fe8943421c9cc  LichViet-1.0.1-release-unsigned.apk
+bbb5b0982567628b2547240f9eb5655e928412c49a1a3b1cfa7650c549a8bacd  LichViet-1.0.1-release.aab

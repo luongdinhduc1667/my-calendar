@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onboarding_welcome_title">Lịch Việt – Meaning in every day</string>
+    <string name="onboarding_welcome_body">A thoughtful solar and Vietnamese lunar calendar for the days that matter. Calendar calculations run on your device, even without a connection.</string>
+    <string name="onboarding_lunar_title">Time, through a Vietnamese lens</string>
+    <string name="onboarding_lunar_body">Explore the Vietnamese lunar calendar, holidays, Heavenly Stems and Earthly Branches, solar terms and auspicious hours. Traditional date guidance is offered as cultural reference.</string>
+    <string name="onboarding_events_title">Keep your important dates close</string>
+    <string name="onboarding_events_body">Save appointments, birthdays and lunar anniversaries. Choose repeats and reminder times that help you make time for the people you care about.</string>
+    <string name="onboarding_personalize_title">Make the calendar yours</string>
+    <string name="onboarding_personalize_body">You can change these choices any time in Settings.</string>
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_back">Back</string>
+    <string name="onboarding_start">Get started</string>
+    <string name="onboarding_page">Page %1$d of %2$d</string>
+    <string name="onboarding_language">Language</string>
+    <string name="language_vi">Tiếng Việt</string>
+    <string name="language_en">English</string>
+    <string name="onboarding_theme">Appearance</string>
+    <string name="theme_system">System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="onboarding_week_start">First day of the week</string>
+    <string name="week_start_monday">Monday</string>
+    <string name="week_start_sunday">Sunday</string>
+    <string name="onboarding_show_lunar">Show lunar dates on the calendar</string>
+    <string name="onboarding_setup_reminders">Set up notifications after getting started</string>
+    <string name="onboarding_reminder_explanation">Lịch Việt asks for notification permission only when you choose setup or enable an event reminder. Precise reminders have a separate explanation, and you can always decide later.</string>
+    <string name="onboarding_lunar_art">SOLAR &amp; LUNAR</string>
+    <string name="onboarding_event_art">DAYS TO REMEMBER</string>
+    <string name="onboarding_local_art">OFFLINE · PRIVATE</string>
+</resources>

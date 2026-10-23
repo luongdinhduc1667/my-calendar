@@ -8,12 +8,13 @@ import javax.inject.Inject
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.Dispatchers
 import vn.lichviet.app.data.*
 import vn.lichviet.core.VietnameseCalendar
 import java.time.LocalDate
 import java.time.YearMonth
 
-data class EditorOperation(val running:Boolean=false,val completed:Boolean=false,val requestNotifications:Boolean=false,val error:String?=null)
+data class EditorOperation(val running:Boolean=false,val completed:Boolean=false,val requestNotifications:Boolean=false,val error:Int?=null)
 
 @HiltViewModel
 class CalendarViewModel @Inject constructor(
@@ -38,6 +39,18 @@ class CalendarViewModel @Inject constructor(
     val weekMode = savedState.getStateFlow("week", false)
     val events = repository.events.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
     val preferences = preferencesRepository.preferences.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), UserPreferences())
+    val onboardingCompleted = preferencesRepository.onboardingCompleted
+        .stateIn(viewModelScope, SharingStarted.Eagerly, null)
+    val incomingIcsUri = savedState.getStateFlow<String?>("incoming_ics_uri", null)
+    private val _calendarReady = MutableStateFlow(false)
+    val calendarReady = _calendarReady.asStateFlow()
+    init {
+        viewModelScope.launch(Dispatchers.Default) {
+            VietnameseCalendar.warmUp()
+            _calendarReady.value = true
+        }
+    }
+    val reminderSetup = savedState.getStateFlow("reminder_setup", false)
     private val _editorOperation=MutableStateFlow(EditorOperation())
     val editorOperation:StateFlow<EditorOperation> = _editorOperation.asStateFlow()
     fun select(date: LocalDate) {
@@ -55,16 +68,17 @@ class CalendarViewModel @Inject constructor(
     }
     fun goToday() = select(today())
     suspend fun save(event:EventEntity) = repository.save(event)
+    suspend fun reminderOffsets(eventId:Long) = repository.reminderOffsets(eventId)
     suspend fun delete(id:Long) = repository.delete(id)
-    fun saveFromEditor(event:EventEntity) {
+    fun saveFromEditor(event:EventEntity, offsetsMinutes:List<Int>) {
         if(_editorOperation.value.running)return
         _editorOperation.value=EditorOperation(running=true)
         viewModelScope.launch {
             try {
-                repository.save(event)
+                repository.save(event, offsetsMinutes)
                 _editorOperation.value=EditorOperation(completed=true,requestNotifications=event.reminderEnabled)
             }catch(e:CancellationException){throw e}
-            catch(e:Exception){_editorOperation.value=EditorOperation(error="Không thể lưu sự kiện. Vui lòng thử lại.")}
+            catch(e:Exception){_editorOperation.value=EditorOperation(error=R.string.error_save_event)}
         }
     }
     fun deleteFromEditor(id:Long) {
@@ -73,14 +87,24 @@ class CalendarViewModel @Inject constructor(
         viewModelScope.launch {
             try{repository.delete(id);_editorOperation.value=EditorOperation(completed=true)}
             catch(e:CancellationException){throw e}
-            catch(e:Exception){_editorOperation.value=EditorOperation(error="Không thể xóa sự kiện. Vui lòng thử lại.")}
+            catch(e:Exception){_editorOperation.value=EditorOperation(error=R.string.error_delete_event)}
         }
     }
     fun resetEditorOperation(){if(!_editorOperation.value.running)_editorOperation.value=EditorOperation()}
+    fun openIcsUri(uri:String) { savedState["incoming_ics_uri"] = uri }
+    fun consumeIcsUri() { savedState["incoming_ics_uri"] = null }
+    fun consumeReminderSetup() { savedState["reminder_setup"] = false }
+    suspend fun completeOnboarding(setupReminders:Boolean) {
+        if(setupReminders)savedState["reminder_setup"] = true
+        preferencesRepository.completeOnboarding()
+    }
     suspend fun setTheme(value:AppTheme) = preferencesRepository.setTheme(value)
     suspend fun setLunar(value:Boolean) = preferencesRepository.setShowLunar(value)
     suspend fun setHolidays(value:Boolean) = preferencesRepository.setShowHolidays(value)
     suspend fun setMonday(value:Boolean) = preferencesRepository.setMondayFirst(value)
+    suspend fun setWeekNumbers(value:Boolean) = preferencesRepository.setWeekNumbers(value)
+    suspend fun setAuspiciousHours(value:Boolean) = preferencesRepository.setAuspiciousHours(value)
+    suspend fun setAnimations(value:Boolean) = preferencesRepository.setAnimations(value)
     suspend fun exportBackup() = backupRepository.exportJson()
     suspend fun importBackup(json:String) = backupRepository.importJson(json)
     suspend fun deleteAllData() = backupRepository.deleteAllData()

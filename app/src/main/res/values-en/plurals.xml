@@ -1,0 +1,3 @@
+<resources>
+    <plurals name="backup_restored_count"><item quantity="one">Restored %d event.</item><item quantity="other">Restored %d events.</item></plurals>
+</resources>

@@ -1,76 +1,143 @@
-# Kết quả kiểm chứng — 22/10/2026
+# Kiểm chứng Lịch Việt
 
-## Build thực tế
+Bản mới nhất **1.0.1**: [kết quả build/test và gói](docs/RELEASE_1.0.1.md),
+[đối chiếu đầy đủ MASTER PROMPT](docs/REQUIREMENTS_AUDIT_1.0.1.md).
 
-Đã chạy Gradle trên Windows với JDK 21, Android SDK 37 và Build Tools 36.0.0.
-Các lệnh sau hoàn tất **BUILD SUCCESSFUL**:
+59 bài JVM, 41 bài Android đạt ở cả phone/tablet emulator API 37; Lint 0 lỗi,
+76 cảnh báo; APK/AAB R8 build thành công. XML mới ở artifacts/reports/v1.0.1/.
+Nội dung bên dưới giữ bằng chứng của bản 1.0.0 trước khi cập nhật.
 
-```powershell
-.\build.ps1 :core:test :app:testDebugUnitTest
-.\build.ps1 :app:connectedDebugAndroidTest
-.\build.ps1 :app:connectedDebugAndroidTest :app:lintDebug :app:assembleDebug :app:bundleRelease :app:assembleRelease
-```
+# Lịch Việt 1.0.0 — 23/10/2026
 
-- APK debug cài và chạy được trên Android Emulator API 37.
-- APK release và AAB release được tạo với R8/resource shrinking.
-- Bản release **chưa ký bằng khóa phát hành**; APK debug có chữ ký debug để cài thử.
-- Android Lint debug: **0 lỗi, 41 cảnh báo**. Chủ yếu là phiên bản thư viện mới hơn,
-  thuộc tính widget API 31 có fallback cho API cũ, chuỗi chưa tách tài nguyên,
-  cỡ chữ nhỏ trong widget và khuyến nghị launcher/theme. Không tắt lint để vượt build.
-- Kiểm tra manifest đã merge: không có quyền `INTERNET`. Các quyền phụ thuộc
-  WorkManager gồm wake lock, network state và foreground service; hai quyền
-  khai báo trực tiếp là thông báo và nhận boot completed.
+## Build và môi trường
 
-## Kiểm thử JVM: 27 ca, không lỗi
+Windows, JDK 21, Gradle 9.6.0, AGP 9.4.1, SDK 37, Build Tools 36.0.0.
+Ứng dụng native Kotlin/Compose, versionCode 10000, versionName 1.0.0, minSdk 26.
+Các gate dưới đây được chạy thực tế, không suy ra từ việc chỉ biên dịch test.
 
-| Suite | Số ca | Nội dung chính |
+    .\build.ps1 :core:test :app:testDebugUnitTest :app:lintDebug
+    .\build.ps1 :app:connectedDebugAndroidTest '-Pandroid.injected.androidTest.leaveApksInstalledAfterRun=true'
+    .\build.ps1 :app:assembleRelease :app:bundleRelease
+
+Giữ APK sau instrumentation chỉ phục vụ QA emulator để xem tệp xuất và cài
+bản release smoke; không thay đổi hành vi APK bàn giao.
+
+## JVM: 56 đạt, 0 lỗi
+
+| Suite | Số bài | Phạm vi |
 | --- | ---: | --- |
-| VietnameseCalendarTest | 11 | Toàn bộ 73.414 ngày 1900–2100 khứ hồi, tháng nhuận, Can Chi, lễ, UTC+7, tra ngày |
-| AstronomicalFixturesTest | 3 | Bảng tháng độc lập 2026–2027, thời điểm sóc NASA, khác biệt Việt/Trung năm 1985 |
-| RecurrenceTest | 8 | Tết lặp năm âm, tháng nhuận, ngày 30/tháng thiếu, 29/2, cuối tháng, tuần/ngày |
-| ReminderPlannerTest | 5 | Nhắc trước, giờ đã qua, không lặp trùng, sự kiện một lần, đi nước ngoài |
+| VietnameseCalendarTest | 12 | 73.414 ngày khứ hồi, tháng nhuận, Can Chi, lễ, typed ID |
+| AstronomicalFixturesTest | 3 | Bảng tháng độc lập, sóc NASA, lịch Việt/Trung 1985 |
+| HoroscopeChartEngineTest | 9 | An cung/sao, Cục, Tứ Hóa, 23:00, fixture có nguồn |
+| RecurrenceTest | 8 | Lặp dương/âm, tháng nhuận, ngày 30, cuối tháng, 29/2 |
+| ReminderPlannerTest | 7 | Mốc nhắc, occurrence, lặp, giờ Việt Nam |
+| IcsCodecTest | 10 | Recurrence/ngoại lệ, canonical round trip, alarm, extension, DST |
+| EventLayoutEngineTest | 2 | Thanh nhiều ngày, overlap, hai lane, +N |
+| HoroscopeProfileValidationTest | 5 | Ngày/giờ, tháng nhuận, kiểu dữ liệu, giới hạn |
 
-730 ngày trong 2026–2027 được đối chiếu với các mốc tháng đã công bố.
-25 thời điểm sóc năm 2026–2027 lệch tối đa **29,081 giây** so với bảng NASA làm
-tròn tới phút. Một mốc đông chí 1984 lệch **5,994 phút** trong mô hình kinh độ
-Mặt Trời đơn giản; vẫn giữ đúng ngày dân dụng. Đây là kết quả trên các fixture
-đã chọn, không phải khẳng định sai số bảo đảm trên mọi ngày 1900–2100.
+24 bài thuộc core, 32 thuộc app. XML được sao chép vào
+[artifacts/reports/v1-integration/](artifacts/reports/v1-integration/).
 
-Nguồn và chi tiết tại [core/README.md](core/README.md).
+Fixture thiên văn cũ vẫn đạt: 730 ngày 2026–2027 đối chiếu bảng tháng; 25 mốc
+sóc lệch tối đa 29,081 giây so với bảng NASA làm tròn tới phút. Mốc đông chí
+1984 lệch 5,994 phút trong mô hình kinh độ Mặt Trời đơn giản, vẫn giữ đúng ngày
+dân dụng. Đây là sai số fixture đã chọn, không phải bảo đảm trên toàn dải.
+Nguồn tại [core/README.md](core/README.md).
 
-## Kiểm thử Android
+## Android: 38 đạt trên emulator API 37
 
-Chạy trên Android Emulator 17 / API 37, thay đổi kích thước cửa sổ khả dụng:
+Full suite không có filter lớp: 38 bài, 0 failure, 0 error, 0 skipped.
+Bằng chứng điện thoại:
+[android-api37.xml](artifacts/reports/v1-integration/android-api37.xml).
+Sau chỉnh bố cục chữ lớn/ngày lễ, toàn bộ 38 bài chạy lại ở cấu hình tablet
+ngang 1600×1000/density 200 cũng đạt, 0 lỗi:
+[android-tablet-api37.xml](artifacts/reports/v1-integration/android-tablet-api37.xml).
 
-| Cấu hình | Kết quả |
-| --- | --- |
-| Điện thoại mặc định | 10/10 ca giao diện/state/database lúc trước khi thêm suite widget |
-| Điện thoại nhỏ: 960×1920 px, density 480, rộng 320dp | 14/14 ca |
-| Tablet: 1600×1000 px, density 200, rộng 1280dp | 14/14 ca, chạy lại sau tinh chỉnh bố cục cuối |
+| Nhóm | Số bài | Kiểm chứng |
+| --- | ---: | --- |
+| CalendarStateTest | 1 | Trạng thái lịch |
+| BackupCodecTest | 2 | Backup, validation |
+| ReminderDeliveryTest | 1 | Claim atomic, chống giao trùng |
+| ReminderMigrationTest | 2 | V1/V2 → hiện tại giữ sự kiện, reminder, trạng thái, FK |
+| RoomPersistenceTest | 1 | Lưu/đọc dữ liệu thật |
+| ChartExportTest | 1 | PNG 1600×2900, PDF A4 hai trang, FileProvider, render PDF thật |
+| HoroscopeChartUiTest | 2 | 12 cung chọn được, editor và validation |
+| HoroscopeJourneyTest | 1 | Tạo, recreation, sửa/xóa hồ sơ qua MainActivity/Room |
+| HoroscopeProfilePersistenceTest | 3 | Nhiều hồ sơ, migration 3→4, backup |
+| IcsRuntimeTest | 3 | Timezone/DST, UTF-8, UID, rollback, VTIMEZONE sai |
+| AlarmReminderIntegrationTest | 3 | Alarm cập nhật/hủy/fallback, notification không trùng, boot/timezone |
+| CalendarNavigationTest | 4 | Ngày âm, đổi tháng, các tab, converter |
+| CalendarTextLocalizationTest | 3 | VI/EN, date pattern, tháng nhuận, lý do Almanac |
+| EventJourneyTest | 1 | CRUD sự kiện qua UI |
+| MultipleReminderEditorTest | 1 | Nhiều mốc nhắc qua recreation và lưu |
+| OnboardingJourneyTest | 2 | Skip bền, đổi VI→EN, restart, xem lại |
+| WidgetSelectionTest | 1 | Ngày chọn qua recreation với intent widget |
+| WidgetLocalizationTest | 2 | English, ICS/nhiều ngày, end exclusive |
+| WidgetRenderingTest | 4 | RemoteViews thật, dữ liệu Room |
 
-Các ca Android gồm:
+Receiver boot/timezone được gọi trực tiếp để kiểm tra khôi phục từ dữ liệu lưu;
+đây không phải thử tắt/bật máy thật hoặc Doze dài hạn. Fixture không được đóng
+gói thành dữ liệu mẫu của ứng dụng.
 
-- Room CRUD trên database riêng, đóng/mở lại và giữ nguyên enum/chính sách lặp.
-- Backup JSON giữ dấu tiếng Việt, tùy chọn lịch và chính sách tháng nhuận;
-  loại bỏ dữ liệu hỏng, ngày sai và số phân số trước khi khôi phục.
-- ViewModel khôi phục ngày/tháng/chế độ tuần từ SavedStateHandle; chặn ngày
-  ngoài khoảng hỗ trợ; đồng bộ tiêu đề tháng khi chuyển sang tuần.
-- Điều hướng năm tab/rail, chuyển tháng trước/sau, đổi lịch và quay lại.
-- Tạo ngày giỗ lặp âm lịch qua giao diện, lưu Room, tái tạo Activity, mở lại và xóa.
-- Chọn ngày khác sau khi mở từ widget, tái tạo Activity và giữ đúng lựa chọn mới.
-- Bốn RemoteViews widget được Android inflate/apply và đo layout thật, gồm
-  widget sự kiện đọc dữ liệu từ Room riêng. Không chỉ kiểm tra XML biên dịch.
+## Lint, release và kiểm tra trực quan
 
-XML kết quả được giữ trong `artifacts/reports/phone`, `small-phone` và `tablet`.
-Ảnh chụp thực tế ở `artifacts/phone.png` và `artifacts/tablet.png`.
-Emulator đã được trả về độ phân giải/density ban đầu sau kiểm thử.
+- Lint debug: **0 lỗi, 76 cảnh báo**, không baseline/tắt lỗi. Chủ yếu UseKtx,
+  phiên bản dependency, thuộc tính API mới có fallback, resource chưa dùng và
+  plurals candidate; còn cỡ chữ widget nhỏ, icon launcher, overdraw và dấu chấm
+  trong XML. XML lưu trong thư mục báo cáo.
+- APK/AAB release dùng R8 và resource shrinking đã build thành công. Chỉ bỏ
+  cảnh báo hai lớp không bắt buộc đã kiểm tra: ZoneRulesProvider không công
+  khai trên Android (iCal4j có fallback) và annotation ToString compile-only
+  của threeten-extra. Không bỏ toàn bộ cảnh báo thư viện.
+- Đã ký **bản sao QA** bằng debug keystore có sẵn, cài cập nhật APK release
+  minified, mở fixture ICS qua ACTION_VIEW/FileProvider, thấy preview đúng,
+  nhập rồi mở lại nhận UID trùng với lựa chọn Update. Không có crash
+  AndroidRuntime trong lần smoke. Ảnh: artifacts/v1-release-ics.png.
+- Đã xem PNG và cả hai trang PDF từ fixture English/biệt danh dài: đủ 12 cung,
+  tên sao, đại hạn, chi tiết phụ tinh, Tứ Hóa trên PDF và ghi chú nguồn/phạm vi;
+  không thấy chữ bị cắt trong fixture. [Tệp xuất QA](artifacts/horoscope-qa/).
+- Đã xem lịch điện thoại, tablet ngang 1600×1000/density 200, VI sáng và
+  English tối. QA cỡ chữ 200% phát hiện và sửa chiều rộng lưới/rail; khi cần
+  lịch cuộn ngang hoặc chuyển một cột để đọc chữ lớn. Đây là kiểm tra một số
+  màn thực tế, không bao phủ mọi luồng ở mọi cỡ chữ.
+- Resource: 514 string/plural/string-array có thể dịch trong mỗi bộ mặc định,
+  VI và EN, không thiếu tên. AAB tắt language split để đổi VI/EN offline.
+  Chi tiết kỹ thuật lỗi ICS giữ nguyên nội dung gốc sau nút mở riêng.
+- Manifest release merged không có INTERNET, quyền đọc toàn bộ bộ nhớ hoặc
+  USE_EXACT_ALARM. Có POST_NOTIFICATIONS, RECEIVE_BOOT_COMPLETED,
+  SCHEDULE_EXACT_ALARM; WorkManager thêm wake lock, network state, foreground
+  service và quyền receiver nội bộ.
 
-## Chưa kiểm chứng
+## Gói bàn giao
 
-- Chưa có thiết bị Android thật hoặc emulator API 26 trong lượt chạy này.
-- Chưa đo FPS, startup, pin, bộ nhớ, benchmark hay toàn bộ kích thước chữ/TalkBack.
-- Chưa kiểm tra lịch giao thông báo qua nhiều ngày Doze/khởi động lại thực tế;
-  đã kiểm thử quy tắc lập thời điểm nhắc, nhưng WorkManager vẫn là best effort.
-- Widget đã kiểm tra Android apply/render, chưa chạy thử dài ngày trên mọi launcher.
-- Chưa có migration test giữa nhiều phiên bản Room vì hiện chỉ có schema v1.
-- Chưa kiểm thử nâng cấp bản đã ký, Play pre-launch report hay thực hiện phát hành.
+- [LichViet-1.0.0-debug.apk](artifacts/LichViet-1.0.0-debug.apk): cài thử, ký debug.
+- [LichViet-1.0.0-release-unsigned.apk](artifacts/LichViet-1.0.0-release-unsigned.apk): release tối ưu, **chưa ký phát hành**.
+- [LichViet-1.0.0-release.aab](artifacts/LichViet-1.0.0-release.aab): cần ký trước phát hành.
+- [SHA256SUMS-1.0.0.txt](artifacts/SHA256SUMS-1.0.0.txt): đối chiếu đúng gói.
+
+artifacts/qa/release-smoke.apk chỉ là bản sao ký debug để QA, không phải gói
+phát hành. Gói 0.1.0 và báo cáo phase trước được giữ làm lịch sử.
+
+## Giới hạn và QA còn cần trước phát hành cửa hàng
+
+- Chỉ có emulator API 37: chưa runtime API 26–32, máy thật, foldable,
+  multi-window, đầy đủ launcher hoặc TalkBack; chưa benchmark pin/FPS/cold
+  start hay nền dài hạn. Smoke test không chứng nhận hiệu năng/accessibility.
+- Exact alarm phụ thuộc quyền/Android/OEM. Không bảo đảm khi tắt máy,
+  force-stop hoặc chặn thông báo. Sound/vibration theo channel Android.
+  Xem [Phase 1](docs/PHASE1_REMINDERS.md).
+- ICS: VTIMEZONE nhúng phải khớp timezone của thiết bị trong 1900–2100;
+  custom TZID, định nghĩa khác/thiếu lịch sử bị từ chối. EXRULE, RANGE, lặp
+  dưới một ngày, một số VALARM chưa hỗ trợ. Không sync tài khoản/editor ngoại
+  lệ. Xem [Phase 2](docs/PHASE2_ADVANCED_CALENDAR.md).
+- Lịch dùng UTC+7 hồi tố trước 1968; tiết khí tại trưa không thay API thời điểm
+  chuyển tiết chính xác. Ngày tốt và Tử Vi là thông tin văn hóa.
+- Tử Vi tính bộ có nguồn của ấn bản Minh Nam Dương Đường, có hai hiệu chỉnh
+  bảng công bố, chưa có full-chart golden độc lập. Không gán độ sáng sao,
+  phụ tinh chưa xác minh, giờ mặt trời hoặc lời dự đoán ngẫu nhiên.
+  Xem [quy tắc](core/HOROSCOPE_RULES.md), [Phase 4](docs/PHASE4_HOROSCOPE.md).
+- Backup/ảnh/PDF có thể chứa dữ liệu cá nhân đọc được. Người dùng chọn lưu và
+  chia sẻ. Room/DataStore không có transaction xuyên hai kho nếu mất nguồn
+  giữa restore; chưa kiểm thử mất nguồn thật.
+- Phát hành Play cần keystore riêng, QA máy thật, store listing, chính sách
+  quyền riêng tư và Data safety. Không tự commit, push hoặc publish.

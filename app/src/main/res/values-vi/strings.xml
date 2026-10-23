@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Lịch Việt</string>
+  <string name="notification_channel">Nhắc lịch cá nhân</string>
+</resources>

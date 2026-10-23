@@ -3,7 +3,7 @@
     android:id="@+id/widget_root" android:layout_width="match_parent" android:layout_height="match_parent"
     android:orientation="vertical" android:padding="12dp" android:background="#F5F2E9">
     <TextView android:id="@+id/widget_title" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:text="LỊCH VIỆT" android:textSize="12sp" android:textStyle="bold" android:textColor="#BE513B" android:maxLines="1" />
+        android:text="@string/widget_app_title" android:textSize="12sp" android:textStyle="bold" android:textColor="#BE513B" android:maxLines="1" />
     <TextView android:id="@+id/widget_day" android:layout_width="match_parent" android:layout_height="wrap_content"
         android:textSize="40sp" android:textStyle="bold" android:includeFontPadding="false" android:textColor="#223B32" android:maxLines="1" />
     <TextView android:id="@+id/widget_lunar" android:layout_width="match_parent" android:layout_height="wrap_content"

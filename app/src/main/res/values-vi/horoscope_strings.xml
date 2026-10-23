@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="hs_eyebrow">Văn hóa truyền thống</string>
+  <string name="hs_title">Lá số Tử Vi</string>
+  <string name="hs_intro">Lập lá số offline theo một bộ quy tắc có dẫn nguồn. Đây là hệ thống văn hóa và tín ngưỡng, không phải dự đoán khoa học.</string>
+  <string name="hs_profiles">Hồ sơ đã lưu trên thiết bị</string>
+  <string name="hs_new">Thêm hồ sơ</string>
+  <string name="hs_edit">Sửa hồ sơ</string>
+  <string name="hs_delete">Xóa hồ sơ</string>
+  <string name="hs_delete_confirm">Xóa hồ sơ %1$s khỏi thiết bị? Bạn có thể tạo lại từ ngày giờ sinh.</string>
+  <string name="hs_unnamed">Hồ sơ không tên</string>
+  <string name="hs_empty">Tạo hồ sơ bằng biệt danh hoặc để trống tên. Ngày giờ sinh được lưu trong cơ sở dữ liệu riêng của ứng dụng trên thiết bị.</string>
+  <string name="hs_label">Tên hoặc biệt danh (không bắt buộc)</string>
+  <string name="hs_group">Nhóm hồ sơ</string>
+  <string name="hs_date_kind">Loại ngày sinh</string>
+  <string name="hs_day">Ngày</string>
+  <string name="hs_month">Tháng</string>
+  <string name="hs_year">Năm</string>
+  <string name="hs_leap">Tháng nhuận</string>
+  <string name="hs_hour">Giờ (0–23)</string>
+  <string name="hs_minute">Phút (0–59)</string>
+  <string name="hs_sex">Tham số giới tính của phương pháp cổ</string>
+  <string name="hs_sex_note">Hai giá trị nam/nữ chỉ được dùng để xác định chiều đại hạn và tiểu hạn theo tài liệu đã chọn.</string>
+  <string name="hs_zone_note">Giờ sinh phải được quy đổi sang giờ cố định UTC+7 trước khi nhập. Ứng dụng chưa hiệu chỉnh theo nơi sinh, giờ lịch sử hoặc giờ Mặt Trời thật.</string>
+  <string name="hs_day_rule">Quy ước lúc 23:00</string>
+  <string name="hs_day_rule_note">Cả 23:00 và 00:00 thuộc giờ Tý. Bạn chọn có chuyển ngày lúc 23:00 hay giữ ngày dân sự; quy ước được lưu cùng hồ sơ.</string>
+  <string name="hs_range">Ngày dương tương ứng phải trong 01/01/1900–31/12/2100. Ngày âm và tháng nhuận phải tồn tại.</string>
+  <string name="hs_invalid">Ngày, giờ hoặc tháng nhuận không hợp lệ trong phạm vi hỗ trợ. Kiểm tra lại các trường.</string>
+  <string name="hs_storage_error">Không thể hoàn tất thao tác. Vui lòng thử lại.</string>
+  <string name="hs_save">Lưu và lập lá số</string>
+  <string name="hs_cancel">Hủy</string>
+  <string name="hs_confirm">Tiếp tục</string>
+  <string name="hs_solar">Dương lịch</string>
+  <string name="hs_lunar">Âm lịch Việt Nam</string>
+  <string name="hs_birth_summary">%1$s · %2$s · UTC+7</string>
+  <string name="hs_lunar_date">%1$d/%2$d/%3$d%4$s</string>
+  <string name="hs_leap_suffix"> (nhuận)</string>
+  <string name="hs_effective_date">Ngày dùng để lập lá số</string>
+  <string name="hs_life_body">Mệnh: %1$s · Thân: %2$s</string>
+  <string name="hs_birth_year">Năm sinh âm: %1$s %2$s · %3$s</string>
+  <string name="hs_bureau">%1$s cục · khởi đại hạn tuổi mụ %2$d</string>
+  <string name="hs_rule_set">Bộ quy tắc</string>
+  <string name="hs_edition">Tử Vi Đẩu Số Toàn Thư · bản Minh Nam Dương Đường, quyển 3</string>
+  <string name="hs_chart">Lá số 4 × 4</string>
+  <string name="hs_readable">Danh sách dễ đọc</string>
+  <string name="hs_zoom_in">Phóng to lá số</string>
+  <string name="hs_zoom_out">Thu nhỏ lá số</string>
+  <string name="hs_fit">Vừa màn hình</string>
+  <string name="hs_gestures">Chạm một cung để đọc chi tiết. Chụm hai ngón để phóng to; kéo để di chuyển. Chế độ danh sách giữ cỡ chữ dễ đọc.</string>
+  <string name="hs_chart_center">TỬ VI ĐẨU SỐ</string>
+  <string name="hs_body_marker">Thân</string>
+  <string name="hs_palace_label">Cung %1$s, %2$s %3$s%4$s</string>
+  <string name="hs_main_stars">Chính tinh</string>
+  <string name="hs_aux_stars">Phụ tinh được hỗ trợ</string>
+  <string name="hs_no_stars">Không có sao thuộc nhóm này</string>
+  <string name="hs_no_main_short">Vô chính diệu</string>
+  <string name="hs_major">Đại hạn: tuổi mụ %1$d–%2$d</string>
+  <string name="hs_major_note">Mỗi cung ứng với một khoảng 10 tuổi theo chiều và tuổi khởi cục. Đây là kết quả an hạn, chưa phải luận đoán sự kiện.</string>
+  <string name="hs_age">Tuổi mụ cần tra (1–120)</string>
+  <string name="hs_minor">Tiểu hạn tuổi %1$d ở %2$s</string>
+  <string name="hs_major_at_age">Đại hạn tuổi %1$d ở %2$s</string>
+  <string name="hs_before_major">Tuổi này chưa đến đại hạn đầu tiên của cục.</string>
+  <string name="hs_age_invalid">Nhập tuổi mụ từ 1 đến 120. Ứng dụng không tự suy tuổi từ ngày hiện tại.</string>
+  <string name="hs_palace_context">Chủ đề văn hóa của cung: %1$s. Tên cung mô tả một chủ đề trong hệ thống cổ; ứng dụng không suy ra kết quả cuộc đời từ các sao tại đây.</string>
+  <string name="hs_transforms">Tứ hóa theo can năm sinh</string>
+  <string name="hs_transform_line">%1$s · %2$s → %3$s</string>
+  <string name="hs_unplaced">chưa an vị trí cho tháng nhuận</string>
+  <string name="hs_transform_note">Giữ nguyên hàng Canh: Thái Dương/Vũ Khúc/Thiên Đồng/Thiên Tướng và Nhâm: Thiên Lương/Tử Vi/Thiên Phủ/Vũ Khúc của bản Minh. Các trường phái khác có thể khác.</string>
+  <string name="hs_search">Tìm cung hoặc sao</string>
+  <string name="hs_no_results">Không tìm thấy cung hoặc sao phù hợp.</string>
+  <string name="hs_dictionary">Tra cứu sao và quy tắc an sao</string>
+  <string name="hs_star_at">%1$s · cung %2$s (%3$s)</string>
+  <string name="hs_star_main_note">Chính tinh trong nhóm 14 sao. Vị trí được xác định từ bảng Cục/ngày âm cho Tử Vi và quy tắc khoảng cách của nhóm Tử Vi–Thiên Phủ. Nguồn: 定金木水火土局, 安南北斗諸星訣, 安天府圖.</string>
+  <string name="hs_star_wen_note">Tên sao trong cặp Văn Xương–Văn Khúc. Bản đã chọn an cặp này theo giờ sinh. Nguồn: 安文昌文曲星訣.</string>
+  <string name="hs_star_fu_note">Tên sao trong cặp Tả Phụ–Hữu Bật. An theo tháng sinh thường; quy tắc tháng nhuận chưa được tài liệu đã chọn giải quyết nên để trống. Nguồn: 安左輔右弼星訣.</string>
+  <string name="hs_star_lu_note">Lộc Tồn an theo can năm sinh; Kình Dương và Đà La nằm ở hai cung kề theo quy tắc. Nguồn: 安祿存星訣, 安擎羊陀羅二星訣.</string>
+  <string name="hs_star_ma_note">Thiên Mã được an từ nhóm địa chi năm sinh. Nguồn: 安天馬星訣.</string>
+  <string name="hs_star_kong_note">Bản này gọi sao đếm nghịch theo giờ từ Hợi là Thiên Không (天空), sao đếm thuận là Địa Kiếp. Tên gọi có thể khác trường phái. Nguồn: 安天空地劫訣.</string>
+  <string name="hs_scope">Giới hạn và nguồn tham khảo</string>
+  <string name="hs_scope_note">Có Mệnh/Thân, Cục, 14 chính tinh, tối đa 10 phụ tinh, Tứ hóa và đại/tiểu hạn. Chưa hỗ trợ miếu–vượng–hãm, các phụ tinh khác hoặc luận đoán. Hai ô bảng Tử Vi (Mộc 3/ngày 5 và Kim 4/ngày 30) dùng hiệu đính được ghi rõ trong tài liệu dự án.</string>
+  <string name="hs_leap_warning">Hồ sơ tháng nhuận: Mệnh/Thân tính như tháng kế theo bản đã chọn. Tả Phụ/Hữu Bật chưa an vì thiếu quy tắc xác thực; hóa nhắm đến sao này cũng để trống vị trí.</string>
+  <string name="hs_source">Đọc bản nguồn · quyển 3</string>
+  <string name="hs_source_catalog">Xem hồ sơ bản Minh · Lưu trữ Quốc gia Nhật Bản</string>
+  <string name="hs_compare">So sánh thông tin đã tính</string>
+  <string name="hs_compare_note">Chỉ đối chiếu dữ kiện lịch và vị trí đã hỗ trợ. Không chấm điểm hợp tuổi hoặc suy đoán quan hệ.</string>
+  <string name="hs_compare_choose">Chọn hồ sơ thứ hai</string>
+  <string name="hs_compare_min">Lưu ít nhất hai hồ sơ để so sánh.</string>
+  <string name="hs_compare_fact">%1$s: %2$s | %3$s</string>
+  <string name="hs_fact_life">Cung Mệnh</string>
+  <string name="hs_fact_body">Cung Thân</string>
+  <string name="hs_fact_bureau">Cục</string>
+  <string name="hs_fact_hour">Chi giờ sinh</string>
+  <string name="hs_export">Xuất và chia sẻ lá số</string>
+  <string name="hs_save_image">Lưu ảnh PNG</string>
+  <string name="hs_save_pdf">Lưu PDF</string>
+  <string name="hs_share_image">Chia sẻ ảnh</string>
+  <string name="hs_share_pdf">Chia sẻ PDF</string>
+  <string name="hs_export_confirm_title">Lá số chứa thông tin cá nhân</string>
+  <string name="hs_export_confirm">Tệp sẽ chứa tên hoặc biệt danh, ngày giờ sinh, tham số giới tính, quy ước lập lá số và kết quả của hồ sơ đang chọn. Chỉ tiếp tục nếu bạn đồng ý lưu hoặc chia sẻ các dữ liệu này.</string>
+  <string name="hs_export_ready">Đã lưu tệp lá số.</string>
+  <string name="hs_share_chooser">Chia sẻ lá số đã xác nhận</string>
+  <string name="hs_export_caption">Tài liệu văn hóa; không phải dự đoán khoa học. Giờ cố định UTC+7. Kết quả phụ thuộc quy ước 23:00 và bộ quy tắc nêu trên.</string>
+  <string name="hs_export_page">Chi tiết 12 cung · tuổi mụ là tuổi tính truyền thống</string>
+  <string-array name="hs_groups">
+    <item>Bản thân</item>
+    <item>Gia đình</item>
+    <item>Bạn bè</item>
+  </string-array>
+  <string-array name="hs_sexes">
+    <item>Nam</item>
+    <item>Nữ</item>
+  </string-array>
+  <string-array name="hs_day_rules">
+    <item>Đổi ngày lúc 00:00</item>
+    <item>Đổi ngày lúc 23:00</item>
+  </string-array>
+  <string-array name="hs_branches">
+    <item>Tý</item>
+    <item>Sửu</item>
+    <item>Dần</item>
+    <item>Mão</item>
+    <item>Thìn</item>
+    <item>Tỵ</item>
+    <item>Ngọ</item>
+    <item>Mùi</item>
+    <item>Thân</item>
+    <item>Dậu</item>
+    <item>Tuất</item>
+    <item>Hợi</item>
+  </string-array>
+  <string-array name="hs_stems">
+    <item>Giáp</item>
+    <item>Ất</item>
+    <item>Bính</item>
+    <item>Đinh</item>
+    <item>Mậu</item>
+    <item>Kỷ</item>
+    <item>Canh</item>
+    <item>Tân</item>
+    <item>Nhâm</item>
+    <item>Quý</item>
+  </string-array>
+  <string-array name="hs_palaces">
+    <item>Mệnh</item>
+    <item>Huynh Đệ</item>
+    <item>Phu Thê</item>
+    <item>Tử Tức</item>
+    <item>Tài Bạch</item>
+    <item>Tật Ách</item>
+    <item>Thiên Di</item>
+    <item>Nô Bộc</item>
+    <item>Quan Lộc</item>
+    <item>Điền Trạch</item>
+    <item>Phúc Đức</item>
+    <item>Phụ Mẫu</item>
+  </string-array>
+  <string-array name="hs_palace_topics">
+    <item>bản thân</item>
+    <item>anh chị em</item>
+    <item>hôn nhân</item>
+    <item>con cái</item>
+    <item>tài sản và tiền bạc</item>
+    <item>sức khỏe theo quan niệm cổ</item>
+    <item>đi xa và môi trường bên ngoài</item>
+    <item>bạn hữu và cộng sự</item>
+    <item>công danh và sự nghiệp</item>
+    <item>nhà cửa và đất đai</item>
+    <item>phúc đức và dòng họ</item>
+    <item>cha mẹ</item>
+  </string-array>
+  <string-array name="hs_main_names">
+    <item>Tử Vi</item>
+    <item>Thiên Cơ</item>
+    <item>Thái Dương</item>
+    <item>Vũ Khúc</item>
+    <item>Thiên Đồng</item>
+    <item>Liêm Trinh</item>
+    <item>Thiên Phủ</item>
+    <item>Thái Âm</item>
+    <item>Tham Lang</item>
+    <item>Cự Môn</item>
+    <item>Thiên Tướng</item>
+    <item>Thiên Lương</item>
+    <item>Thất Sát</item>
+    <item>Phá Quân</item>
+  </string-array>
+  <string-array name="hs_aux_names">
+    <item>Văn Xương</item>
+    <item>Văn Khúc</item>
+    <item>Tả Phụ</item>
+    <item>Hữu Bật</item>
+    <item>Lộc Tồn</item>
+    <item>Kình Dương</item>
+    <item>Đà La</item>
+    <item>Thiên Mã</item>
+    <item>Thiên Không</item>
+    <item>Địa Kiếp</item>
+  </string-array>
+  <string-array name="hs_bureaus">
+    <item>Thủy nhị</item>
+    <item>Mộc tam</item>
+    <item>Kim tứ</item>
+    <item>Thổ ngũ</item>
+    <item>Hỏa lục</item>
+  </string-array>
+  <string-array name="hs_transformations">
+    <item>Hóa Lộc</item>
+    <item>Hóa Quyền</item>
+    <item>Hóa Khoa</item>
+    <item>Hóa Kỵ</item>
+  </string-array>
+  <string-array name="hs_polarities">
+    <item>Dương</item>
+    <item>Âm</item>
+  </string-array>
+</resources>

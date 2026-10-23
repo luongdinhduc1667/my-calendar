@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_app_title">LỊCH VIỆT</string>
+    <string name="widget_name_today">Lịch Việt · Hôm nay</string>
+    <string name="widget_name_lunar">Lịch Việt · Ngày âm</string>
+    <string name="widget_name_month">Lịch Việt · Tháng</string>
+    <string name="widget_name_upcoming">Lịch Việt · Sắp tới</string>
+    <string name="widget_supported_years">Hỗ trợ lịch âm năm 1900–2100</string>
+    <string name="widget_upcoming_title">LỊCH HẸN SẮP TỚI</string>
+    <string name="widget_upcoming_none">Chưa có</string>
+    <string name="widget_upcoming_count">%1$d lịch hẹn</string>
+    <string name="widget_upcoming_tap">Chạm để thêm sự kiện</string>
+    <string name="widget_upcoming_categories">Sinh nhật · Ngày giỗ · Sự kiện</string>
+    <string name="widget_upcoming_line">%1$s  %2$s  %3$s</string>
+    <string name="widget_lunar_title">ÂM LỊCH · THÁNG %1$d%2$s</string>
+    <string name="widget_lunar_leap">" NHUẬN"</string>
+    <string name="widget_lunar_year">Năm %1$s</string>
+    <string name="widget_today_title">HÔM NAY · THÁNG %1$s</string>
+    <string name="widget_today_lunar">Âm lịch %1$s · %2$s</string>
+    <string name="widget_all_day">Cả ngày</string>
+    <string name="widget_cell_description">%1$s, âm lịch %2$s</string>
+    <plurals name="widget_cell_events_description"><item quantity="other">%1$s, %2$d sự kiện</item></plurals>
+    <string name="widget_date_range">%1$s–%2$s</string>
+    <string-array name="widget_weekdays_monday"><item>T2</item><item>T3</item><item>T4</item><item>T5</item><item>T6</item><item>T7</item><item>CN</item></string-array>
+    <string-array name="widget_weekdays_sunday"><item>CN</item><item>T2</item><item>T3</item><item>T4</item><item>T5</item><item>T6</item><item>T7</item></string-array>
+</resources>

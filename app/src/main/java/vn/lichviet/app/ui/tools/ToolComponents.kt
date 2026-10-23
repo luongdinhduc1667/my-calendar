@@ -23,28 +23,23 @@ import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import vn.lichviet.app.R
+import vn.lichviet.app.ui.CalendarText
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneOffset
-import java.time.format.DateTimeFormatter
-import java.util.Locale
 
-internal val VietnameseLocale = Locale.forLanguageTag("vi-VN")
-
-internal fun LocalDate.vietnameseDate(): String =
-    format(DateTimeFormatter.ofPattern("dd/MM/yyyy", VietnameseLocale))
-
-internal fun LocalDate.vietnameseFullDate(): String =
-    format(DateTimeFormatter.ofPattern("EEEE, dd/MM/yyyy", VietnameseLocale))
-        .replaceFirstChar { it.titlecase(VietnameseLocale) }
 
 @Composable
 internal fun ToolHeading(eyebrow: String, title: String, description: String) {
+    val locale = CalendarText.locale(LocalContext.current)
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Text(
-            eyebrow.uppercase(VietnameseLocale),
+            eyebrow.uppercase(locale),
             color = MaterialTheme.colorScheme.primary,
             style = MaterialTheme.typography.labelMedium,
             fontWeight = FontWeight.Bold,
@@ -75,6 +70,7 @@ internal fun ToolCard(modifier: Modifier = Modifier, content: @Composable Column
 
 @Composable
 internal fun DateChoice(label: String, date: LocalDate?, onClick: () -> Unit, modifier: Modifier = Modifier) {
+    val context = LocalContext.current
     Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Text(label, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
         OutlinedButton(onClick = onClick, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(16.dp)) {
@@ -83,7 +79,8 @@ internal fun DateChoice(label: String, date: LocalDate?, onClick: () -> Unit, mo
                 horizontalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 Icon(Icons.Rounded.CalendarMonth, contentDescription = null)
-                Text(date?.vietnameseDate() ?: "Chọn ngày", style = MaterialTheme.typography.titleMedium)
+                Text(date?.let { CalendarText.shortDate(context, it) } ?: stringResource(R.string.tool_choose_date),
+                    style = MaterialTheme.typography.titleMedium)
             }
         }
     }
@@ -117,11 +114,11 @@ internal fun VietnameseDateDialog(
                     }
                 },
                 enabled = picker.selectedDateMillis != null,
-            ) { Text("Chọn ngày") }
+            ) { Text(stringResource(R.string.tool_choose_date)) }
         },
-        dismissButton = { TextButton(onClick = onDismiss) { Text("Hủy") } },
+        dismissButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.tool_cancel)) } },
     ) {
-        DatePicker(state = picker, title = { Text("Chọn ngày dương lịch", modifier = Modifier.padding(24.dp)) })
+        DatePicker(state = picker, title = { Text(stringResource(R.string.tool_choose_solar_date), modifier = Modifier.padding(24.dp)) })
     }
 }
 

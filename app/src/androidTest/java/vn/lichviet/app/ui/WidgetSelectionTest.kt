@@ -8,12 +8,14 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.lichviet.app.MainActivity
+import vn.lichviet.app.LaunchPreferencesRule
 import vn.lichviet.core.VietnameseCalendar
 import java.time.LocalDate
 
 @RunWith(AndroidJUnit4::class)
 class WidgetSelectionTest {
-    @get:Rule val compose=createAndroidComposeRule<MainActivity>()
+    @get:Rule(order=0) val launchPreferences=LaunchPreferencesRule()
+    @get:Rule(order=1) val compose=createAndroidComposeRule<MainActivity>()
     @Test fun choosingAnotherDaySurvivesRecreationWithOriginalWidgetIntent() {
         val today=LocalDate.now(VietnameseCalendar.zoneId)
         val original=today.withDayOfMonth(1)

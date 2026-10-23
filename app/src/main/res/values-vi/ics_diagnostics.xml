@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ics_issue_file_large">Tệp ICS vượt quá giới hạn 4 MB.</string>
+  <string name="ics_issue_parse">Không phân tích được tệp iCalendar. Hãy kiểm tra định dạng và mã hóa UTF-8.</string>
+  <string name="ics_issue_limit">Tệp có quá nhiều sự kiện hoặc UID.</string>
+  <string name="ics_issue_uid">Sự kiện thiếu UID, nên không thể nhập chuỗi này.</string>
+  <string name="ics_issue_empty">Không tìm thấy sự kiện VEVENT trong tệp.</string>
+  <string name="ics_issue_master">UID phải có đúng một sự kiện gốc.</string>
+  <string name="ics_issue_override_limit">Chuỗi có hơn 500 ngoại lệ lặp.</string>
+  <string name="ics_issue_invalid">Dữ liệu sự kiện không hợp lệ hoặc ngoài phạm vi hỗ trợ 1900–2100.</string>
+  <string name="ics_issue_unsupported">Chuỗi dùng tính năng chưa hỗ trợ. Không thể nhập mà vẫn giữ đúng ý nghĩa lịch.</string>
+  <string name="ics_issue_alarm">Một số VALARM được giữ trong tệp nhưng chưa thể lên lịch trên thiết bị.</string>
+  <string name="ics_issue_native">Đã khôi phục quy tắc lặp âm lịch hoặc ngày cuối tháng của Lịch Việt.</string>
+  <string name="ics_issue_native_ignored">Quy tắc X-LICHVIET đã thay đổi. Chuỗi được giữ nguyên dưới dạng ICS, không khôi phục quy tắc riêng.</string>
+  <string name="ics_diagnostic_detail">Chi tiết kỹ thuật</string>
+  <string name="ics_uid">UID: %1$s</string>
+  <string name="ics_untitled">(Không có tiêu đề)</string>
+</resources>

@@ -3,6 +3,11 @@ package vn.lichviet.app.ui
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.animation.core.FiniteAnimationSpec
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.snap
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -12,6 +17,10 @@ import androidx.compose.ui.unit.sp
 val Vermilion = Color(0xFFB94332)
 val Gold = Color(0xFFB28A4E)
 val Forest = Color(0xFF52705C)
+val LocalAppAnimations = staticCompositionLocalOf { true }
+
+@Composable
+fun <T> appMotionSpec(): FiniteAnimationSpec<T> = if (LocalAppAnimations.current) spring() else snap()
 private val Light = lightColorScheme(
     primary = Vermilion, onPrimary = Color.White, primaryContainer = Color(0xFFF6E6DF),
     onPrimaryContainer = Color(0xFF873526), secondary = Forest,
@@ -32,8 +41,9 @@ private val Dark = darkColorScheme(
 )
 
 @Composable
-fun LichVietTheme(theme: String = "SYSTEM", content: @Composable () -> Unit) {
+fun LichVietTheme(theme: String = "SYSTEM", animationsEnabled: Boolean = true, content: @Composable () -> Unit) {
     val dark = theme == "DARK" || (theme == "SYSTEM" && isSystemInDarkTheme())
+    CompositionLocalProvider(LocalAppAnimations provides animationsEnabled) {
     MaterialTheme(
         colorScheme = if (dark) Dark else Light,
         typography = Typography(
@@ -46,4 +56,5 @@ fun LichVietTheme(theme: String = "SYSTEM", content: @Composable () -> Unit) {
             labelSmall = TextStyle(fontFamily = FontFamily.Default, fontWeight = FontWeight.Medium, fontSize = 10.sp, lineHeight = 15.sp, letterSpacing = 0.6.sp)
         ), content = content
     )
+    }
 }

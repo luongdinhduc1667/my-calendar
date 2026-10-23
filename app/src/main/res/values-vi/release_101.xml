@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="calendar_holiday_culture_day">Ngày Văn hóa Việt Nam</string>
+    <string name="calendar_week_column">Tuần</string>
+    <string name="calendar_week_label">Tuần ISO %1$d, năm tuần %2$d</string>
+    <string name="calendar_find_date">Tìm ngày</string>
+    <string name="settings_week_numbers">Hiển thị số tuần ISO</string>
+    <string name="settings_week_numbers_subtitle">Số tuần theo ISO 8601; xem năm tuần khi giao năm.</string>
+    <string name="settings_auspicious_hours">Hiển thị giờ hoàng đạo</string>
+    <string name="settings_auspicious_hours_subtitle">Sáu khung giờ tham khảo trong thông tin ngày.</string>
+    <string name="settings_animations">Hiệu ứng chuyển động</string>
+    <string name="settings_animations_subtitle">Chuyển cảnh, chuyển trang và hiệu ứng chọn ngày.</string>
+</resources>

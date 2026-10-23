@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <plurals name="backup_restored_count">
+    <item quantity="other">Đã khôi phục %d sự kiện.</item>
+  </plurals>
+</resources>

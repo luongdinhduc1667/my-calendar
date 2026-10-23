@@ -6,3 +6,8 @@ local.properties
 *.jks
 *.keystore
 captures/
+
+# Android build artifacts are generated locally and must not be committed.
+*.apk
+*.aab
+*.idsig

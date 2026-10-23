@@ -1,0 +1,17 @@
+<resources>
+    <string name="ics_issue_file_large">The ICS file exceeds the 4 MB limit.</string>
+    <string name="ics_issue_parse">The iCalendar file could not be parsed. Check its format and UTF-8 encoding.</string>
+    <string name="ics_issue_limit">The file contains too many events or UIDs.</string>
+    <string name="ics_issue_uid">The event is missing its UID, so this series cannot be imported.</string>
+    <string name="ics_issue_empty">No VEVENT events were found in the file.</string>
+    <string name="ics_issue_master">Each UID must have exactly one master event.</string>
+    <string name="ics_issue_override_limit">The series has more than 500 recurrence exceptions.</string>
+    <string name="ics_issue_invalid">The event data is invalid or outside the supported years 1900–2100.</string>
+    <string name="ics_issue_unsupported">The series uses an unsupported feature and cannot be imported without changing its meaning.</string>
+    <string name="ics_issue_alarm">Some VALARMs are preserved in the file but cannot be scheduled on this device.</string>
+    <string name="ics_issue_native">The native Lịch Việt recurrence rule has been restored.</string>
+    <string name="ics_issue_native_ignored">The X-LICHVIET recurrence metadata has changed. The series is preserved as ICS without restoring the native rule.</string>
+    <string name="ics_diagnostic_detail">Technical details</string>
+    <string name="ics_uid">UID: %1$s</string>
+    <string name="ics_untitled">(Untitled)</string>
+</resources>

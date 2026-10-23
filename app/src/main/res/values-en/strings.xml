@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Lịch Việt</string>
+    <string name="notification_channel">Personal reminders</string>
+</resources>

@@ -53,6 +53,14 @@ both directions. `shortLabel` and `fullLabel` are display conveniences.
 Holiday names include lunar observances, mùng một, rằm and Giao thừa; they are
 not a legal leave schedule and do not encode annually announced substitute days.
 
+Version 1.0.1 adds Vietnamese Culture Day on solar November 24, from 2026,
+following [Government Portal guidance on Resolution 28/2026/QH16](https://xaydungchinhsach.chinhphu.vn/ngay-24-11-hang-nam-la-ngay-van-hoa-viet-nam-nguoi-lao-dong-duoc-nghi-huong-nguyen-luong-119260113152642414.htm).
+No retrospective occurrence or annual compensatory leave schedule is inferred.
+dayData(date) shares a synchronized 512-entry LRU of lunar dates and holiday IDs;
+labels remain outside the cache. warmUp() prepares the astronomy table and is
+called on a background dispatcher by the Android host. isoWeekForRow(start)
+uses the ISO week of the Thursday inside a Monday/Sunday-first grid row.
+
 ## Month construction and sources
 
 The implementation locates astronomical new moons and winter solstices, using

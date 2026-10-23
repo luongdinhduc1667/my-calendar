@@ -1,0 +1,3 @@
+<resources>
+    <plurals name="backup_restored_count"><item quantity="other">Đã khôi phục %d sự kiện.</item></plurals>
+</resources>

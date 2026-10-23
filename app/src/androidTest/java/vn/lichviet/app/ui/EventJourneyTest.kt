@@ -7,11 +7,13 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import vn.lichviet.app.MainActivity
+import vn.lichviet.app.LaunchPreferencesRule
 import java.util.UUID
 
 @RunWith(AndroidJUnit4::class)
 class EventJourneyTest {
-    @get:Rule val compose=createAndroidComposeRule<MainActivity>()
+    @get:Rule(order=0) val launchPreferences=LaunchPreferencesRule()
+    @get:Rule(order=1) val compose=createAndroidComposeRule<MainActivity>()
 
     @Test fun lunarAnniversaryCanBeSavedReopenedAndDeleted() {
         val title="Ngày giỗ kiểm thử ${UUID.randomUUID().toString().take(8)}"
@@ -21,7 +23,7 @@ class EventJourneyTest {
         compose.onNodeWithText("Loại sự kiện").performClick()
         compose.onNodeWithText("Ngày giỗ").performClick()
         compose.onNodeWithText("Nhắc tôi").performScrollTo()
-        compose.onNode(isToggleable()).performClick()
+        compose.onAllNodes(isToggleable()).onLast().performClick()
         compose.onNodeWithText("Lưu sự kiện").performScrollTo().performClick()
         compose.waitUntil(timeoutMillis=5000){compose.onAllNodesWithText(title).fetchSemanticsNodes().isNotEmpty()}
         compose.onNodeWithText(title).performScrollTo().assertIsDisplayed()

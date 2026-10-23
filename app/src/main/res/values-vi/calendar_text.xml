@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="calendar_short_date_pattern">dd/MM/yyyy</string>
+  <string name="calendar_full_date_pattern">EEEE, dd/MM/yyyy</string>
+  <string name="calendar_month_day_pattern">dd/MM</string>
+  <string name="calendar_month_year_pattern">\'Tháng\' M / yyyy</string>
+  <string name="calendar_month_name_pattern">\'Tháng\' M</string>
+  <string name="calendar_lunar_short">%1$d/%2$d%3$s</string>
+  <string name="calendar_lunar_full">Ngày %1$d tháng %2$d%3$s, năm %4$s</string>
+  <string name="calendar_leap_suffix">" nhuận"</string>
+  <string name="calendar_leap_parenthesized">" (nhuận)"</string>
+  <string name="calendar_can_chi">%1$s %2$s%3$s</string>
+  <string name="calendar_auspicious_hour">%1$s (%2$02d:00–%3$02d:00)</string>
+  <string-array name="calendar_stems">
+    <item>Giáp</item>
+    <item>Ất</item>
+    <item>Bính</item>
+    <item>Đinh</item>
+    <item>Mậu</item>
+    <item>Kỷ</item>
+    <item>Canh</item>
+    <item>Tân</item>
+    <item>Nhâm</item>
+    <item>Quý</item>
+  </string-array>
+  <string-array name="calendar_branches">
+    <item>Tý</item>
+    <item>Sửu</item>
+    <item>Dần</item>
+    <item>Mão</item>
+    <item>Thìn</item>
+    <item>Tỵ</item>
+    <item>Ngọ</item>
+    <item>Mùi</item>
+    <item>Thân</item>
+    <item>Dậu</item>
+    <item>Tuất</item>
+    <item>Hợi</item>
+  </string-array>
+  <string-array name="calendar_solar_terms">
+    <item>Xuân phân</item>
+    <item>Thanh minh</item>
+    <item>Cốc vũ</item>
+    <item>Lập hạ</item>
+    <item>Tiểu mãn</item>
+    <item>Mang chủng</item>
+    <item>Hạ chí</item>
+    <item>Tiểu thử</item>
+    <item>Đại thử</item>
+    <item>Lập thu</item>
+    <item>Xử thử</item>
+    <item>Bạch lộ</item>
+    <item>Thu phân</item>
+    <item>Hàn lộ</item>
+    <item>Sương giáng</item>
+    <item>Lập đông</item>
+    <item>Tiểu tuyết</item>
+    <item>Đại tuyết</item>
+    <item>Đông chí</item>
+    <item>Tiểu hàn</item>
+    <item>Đại hàn</item>
+    <item>Lập xuân</item>
+    <item>Vũ thủy</item>
+    <item>Kinh trập</item>
+  </string-array>
+  <string-array name="calendar_officers">
+    <item>Kiến</item>
+    <item>Trừ</item>
+    <item>Mãn</item>
+    <item>Bình</item>
+    <item>Định</item>
+    <item>Chấp</item>
+    <item>Phá</item>
+    <item>Nguy</item>
+    <item>Thành</item>
+    <item>Thu</item>
+    <item>Khai</item>
+    <item>Bế</item>
+  </string-array>
+  <string name="calendar_holiday_new_year">Tết Dương lịch</string>
+  <string name="calendar_holiday_valentines">Lễ Tình nhân</string>
+  <string name="calendar_holiday_international_womens">Ngày Quốc tế Phụ nữ</string>
+  <string name="calendar_holiday_reunification">Ngày Giải phóng miền Nam</string>
+  <string name="calendar_holiday_labour">Ngày Quốc tế Lao động</string>
+  <string name="calendar_holiday_national">Quốc khánh Việt Nam</string>
+  <string name="calendar_holiday_vietnamese_womens">Ngày Phụ nữ Việt Nam</string>
+  <string name="calendar_holiday_teachers">Ngày Nhà giáo Việt Nam</string>
+  <string name="calendar_holiday_christmas">Giáng sinh</string>
+  <string name="calendar_holiday_tet">Tết Nguyên đán</string>
+  <string name="calendar_holiday_tet_second">Mùng 2 Tết</string>
+  <string name="calendar_holiday_tet_third">Mùng 3 Tết</string>
+  <string name="calendar_holiday_lantern">Tết Nguyên tiêu</string>
+  <string name="calendar_holiday_cold_food">Tết Hàn thực</string>
+  <string name="calendar_holiday_hung_kings">Giỗ Tổ Hùng Vương</string>
+  <string name="calendar_holiday_vesak">Lễ Phật đản</string>
+  <string name="calendar_holiday_dragon_boat">Tết Đoan ngọ</string>
+  <string name="calendar_holiday_vu_lan">Lễ Vu lan</string>
+  <string name="calendar_holiday_mid_autumn">Tết Trung thu</string>
+  <string name="calendar_holiday_kitchen_gods">Ông Công, Ông Táo</string>
+  <string name="calendar_holiday_first_lunar">Mùng một</string>
+  <string name="calendar_holiday_full_moon">Ngày rằm</string>
+  <string name="calendar_holiday_new_years_eve">Giao thừa</string>
+  <string name="calendar_holiday_in_leap_month">%1$s tháng nhuận</string>
+  <string name="calendar_purpose_opening">Khai trương</string>
+  <string name="calendar_purpose_wedding">Cưới hỏi</string>
+  <string name="calendar_purpose_moving">Chuyển nhà</string>
+  <string name="calendar_purpose_travel">Xuất hành</string>
+  <string name="calendar_assessment_candidate">Có thể tham khảo</string>
+  <string name="calendar_assessment_consider">Cân nhắc thêm</string>
+  <string name="calendar_reason_auspicious">Ngày hoàng đạo theo tháng âm</string>
+  <string name="calendar_reason_ordinary">Ngày không thuộc nhóm hoàng đạo theo tháng âm</string>
+  <string name="calendar_reason_preferred_officer">Trực %1$s: thuộc nhóm tham khảo cho %2$s</string>
+  <string name="calendar_reason_other_officer">Trực %1$s: ngoài nhóm tham khảo cho %2$s</string>
+  <string name="calendar_reason_tam_nuong">Ngày Tam Nương theo quan niệm dân gian</string>
+  <string name="calendar_reason_nguyet_ky">Ngày Nguyệt Kỵ theo quan niệm dân gian</string>
+  <string name="calendar_reason_cultural">Chỉ tham khảo văn hóa; chưa xét tuổi, giờ sinh hoặc các hệ xem ngày khác</string>
+</resources>
